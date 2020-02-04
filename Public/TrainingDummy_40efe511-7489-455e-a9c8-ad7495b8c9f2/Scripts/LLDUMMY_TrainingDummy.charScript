@@ -1,12 +1,14 @@
 INIT
 	CHARACTER:__Me
 	EXTERN INT:%LLDUMMY_LevelModifier = 0
+	CHARACTER:%LLDUMMY_Owner = null
 EVENTS
 
 EVENT LLDUMMY_TargetDummy_OnInit
 ON
 	OnInit()
 ACTIONS
+	SetTag(__Me, "BLOCK_PICKPOCKET")
 	CharacterSetImmortal(__Me, 1)
 	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnInit")
 	
@@ -17,30 +19,121 @@ ACTIONS
 	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnSummoned")
 	
 EVENT LLDUMMY_IncreaseLevel
+VARS
+	FLOAT:_LevelF
+	INT:_Level
 ON
 	OnCharacterFlagSet("LLDUMMY_Commands_IncreaseLevel", __Me)
 ACTIONS
 	Add(%LLDUMMY_LevelModifier, 1)
-	Clamp(%LLDUMMY_LevelModifier, 1, 35)
-	CharacterEvent(__Me, "LLDUMMY_LevelUpDummy")
+IF "c1"
+	CharacterGetStat(_LevelF, %LLDUMMY_Owner, Level)
+THEN
+	Cast(_Level, _LevelF)
+	Multiply(_Level, -1)
+	Clamp(%LLDUMMY_LevelModifier, _Level, 35)
+ELSE
+	Clamp(%LLDUMMY_LevelModifier, -35, 35)
+ENDIF
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_LevelUp")
 	
 EVENT LLDUMMY_DecreaseLevel
+VARS
+	FLOAT:_LevelF
+	INT:_Level
 ON
 	OnCharacterFlagSet("LLDUMMY_Commands_DecreaseLevel", __Me)
 ACTIONS
 	Subtract(%LLDUMMY_LevelModifier, 1)
-	Clamp(%LLDUMMY_LevelModifier, 1, 35)
-	CharacterEvent(__Me, "LLDUMMY_LevelUpDummy")
+IF "c1"
+	CharacterGetStat(_LevelF, %LLDUMMY_Owner, Level)
+THEN
+	Cast(_Level, _LevelF)
+	Multiply(_Level, -1)
+	Clamp(%LLDUMMY_LevelModifier, _Level, 35)
+ELSE
+	Clamp(%LLDUMMY_LevelModifier, -35, 35)
+ENDIF
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_LevelUp")
 	
 EVENT LLDUMMY_TargetDummy_OnDamageTaken
 VARS
 	DAMAGE:_DamageType
 	FLOAT:_Percentage
-	CHARACTER:_CharacterSource
-	ITEM:_ItemSource
+	CHARACTER:_Character
+	ITEM:_Item
+	STRING:_Str
+	STRING:_StrSubbed
+	FIXEDSTRING:_Message
+	FLOAT:_Vit
+	INT:_Damage
+	STRING:_Name
 ON
-	OnDamage(_DamageType, _Percentage, _CharacterSource, _ItemSource)
+	OnDamage(_DamageType, _Percentage, _Character, _Item)
 ACTIONS
+	IF "!c1"
+		IsEqual(_Character, CHARACTER:null)
+	THEN
+		CharacterCharacterEvent(__Me, _Character, "LLDUMMY_SetAttackerName")
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_Vit, __Me, VitalityMax)
+	THEN
+		Multiply(_Percentage, _Vit)
+		Cast(_Damage, _Percentage)
+	ENDIF
 	//SetHealth(__Me, 1.0)
+	IF "!c1"
+		IsEqual(_Character, CHARACTER:null)
+	THEN
+		IF "c1"
+			GetVar(_Name, __Me, "LLDUMMY_AttackerName")
+		THEN
+			Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Name)
+		ELSE
+			Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Character)
+		ENDIF
+	ELIF "!c1"
+		IsEqual(_Item, ITEM:null)
+	THEN
+		Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Item)
+	ENDIF
+	IF "c1&!c2"
+		StringSub(_Str, 0, 255, _StrSubbed) // Safety
+		IsEqual(_StrSubbed, "")
+	THEN
+		Set(_Str, _StrSubbed)
+	ENDIF
+	Cast(_Message, _Str)
+	DisplayCombatInfoText(__Me, _Message, 0.0)
+	DisplayText(__Me, "", 0.0)
 	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnDamageTaken")
-	CombatLogText(__Me, "LLDUMMY_TargetDummy_OnDamageTaken", 0, 0)
+	//CombatLogText(__Me, "LLDUMMY_TargetDummy_OnDamageTaken", 0, 0)	
+
+EVENT LLDUMMY_TargetDummy_Dismiss
+ON
+	OnRegionLeft(__Me, _, _)
+	OnCharacterFlagSet("LLDUMMY_Commands_Destroy", __Me)
+ACTIONS
+	CharacterSetImmortal(__Me, 0)
+	PlayEffectAt(__Me, "RS3_FX_GP_Impacts_Grenade_ClusterBomb_01")
+	CharacterDie(__Me, Explode, __Me)
+	
+EVENT LLDUMMY_Commands_SetHostile
+ON
+	OnCharacterFlagSet("LLDUMMY_Commands_SetHostile", __Me)
+ACTIONS
+	SetFaction(__Me, "Evil")
+	CharacterSetHasDialog(__Me, 1)
+
+EVENT LLDUMMY_Commands_SetNeutral
+ON
+	OnCharacterFlagSet("LLDUMMY_Commands_SetNeutral", __Me)
+ACTIONS
+	SetFaction(__Me, "Neutral")
+
+EVENT LLDUMMY_Commands_SetAlly
+ON
+	OnCharacterFlagSet("LLDUMMY_Commands_SetAlly", __Me)
+ACTIONS
+	SetFaction(__Me, "Good")

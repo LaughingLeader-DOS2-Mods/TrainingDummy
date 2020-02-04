@@ -4,34 +4,69 @@ INITSECTION
 
 KBSECTION
 IF
-StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnInit")
-THEN
-DB_Dialogs(_TargetDummy, "LLDUMMY_TargetDummySettings");
-
-IF
-StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnSummoned")
-AND
-CharacterGetOwner(_TargetDummy, _Owner)
-THEN
-SetVarObject(_TargetDummy, "LLDUMMY_Owner", _Owner);
-CharacterLookAt(_TargetDummy, _Owner, 1);
-
-IF
 StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnDamageTaken")
 THEN
 CharacterSetHitpointsPercentage(_TargetDummy, 100.0);
 
 IF
-StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_LevelUpDummy")
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnInit")
+THEN
+DB_Dialogs(_TargetDummy, "LLDUMMY_TargetDummySettings");
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnInit")
 AND
-GetVarInteger(_TargetDummy, "LLDUMMY_LevelModifier", _TargetLevel)
+CharacterIsSummon(_TargetDummy, 1)
+THEN
+CharacterSetSummonLifetime(_TargetDummy, -1);
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnSummoned")
+AND
+CharacterGetOwner(_TargetDummy, _Owner)
+AND
+_Owner != _TargetDummy
+THEN
+SetVarObject(_TargetDummy, "LLDUMMY_Owner", _Owner);
+CharacterLookAt(_TargetDummy, _Owner, 1);
+LLDUMMY_LevelUpTargetDummy(_TargetDummy);
+
+PROC
+LLDUMMY_LevelUpTargetDummy((CHARACTERGUID)_TargetDummy)
+AND
+GetVarObject(_TargetDummy, "LLDUMMY_Owner", (CHARACTERGUID)_Owner)
+AND
+GetVarInteger(_TargetDummy, "LLDUMMY_LastLevelModifier", _TargetLevel)
+AND
+_TargetLevel > 0
 AND
 CharacterGetLevel(_TargetDummy, _Level)
 THEN
+SetVarInteger(_TargetDummy, "LLDUMMY_LevelModifier", _TargetLevel);
 LLDUMMY_LevelUpTargetDummy(_TargetDummy, _Level, _TargetLevel);
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_LevelUp")
+AND
+GetVarInteger(_TargetDummy, "LLDUMMY_LevelModifier", _Modifier)
+AND
+GetVarObject(_TargetDummy, "LLDUMMY_Owner", (CHARACTERGUID)_Owner)
+AND
+CharacterGetLevel(_TargetDummy, _DummyLevel)
+AND
+CharacterGetLevel(_Owner, _Level)
+AND
+IntegerSum(_Level, _Modifier, _Next)
+THEN
+LeaderLog_LogInt("DEBUG", "[LaughingLeader_TargetDummy:LLDUMMY_TargetDummy_LevelUp] Leveling dummy to ", _Next, " from ", _DummyLevel, "");
+LLDUMMY_LevelUpTargetDummy(_TargetDummy, _DummyLevel, _Next);
+SetVarInteger(_Owner, "LLDUMMY_LastLevelModifier", _Modifier);
+LLDUMMY_UpdateDialogVars(_Owner, _TargetDummy, _Modifier);
 
 PROC
 LLDUMMY_LevelUpTargetDummy((CHARACTERGUID)_TargetDummy, (INTEGER)_Current, (INTEGER)_Next)
+AND
+_Next > 0
 AND
 _Next > _Current
 THEN
@@ -40,12 +75,111 @@ CharacterLevelUpTo(_TargetDummy, _Next);
 PROC
 LLDUMMY_LevelUpTargetDummy((CHARACTERGUID)_TargetDummy, (INTEGER)_Current, (INTEGER)_Next)
 AND
+_Next > 0
+AND
 _Next < _Current
 AND
 GetTemplate(_TargetDummy, _Template)
 THEN
 Transform(_TargetDummy, _Template, 0, 0, 1);
 CharacterLevelUpTo(_TargetDummy, _Next);
+
+//REGION DIALOG_VAR
+/*
+IF
+DialogStarted("LLDUMMY_TargetDummySettings", _Instance)
+AND
+DialogGetInvolvedPlayer(_Instance, 1, _Player)
+AND
+GetVarInteger(_Player, "LLDUMMY_LevelModifier", _GlobalTargetLevel)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0", _GlobalTargetLevel);
+*/
+
+IF
+DialogStarted("LLDUMMY_TargetDummySettings", _Instance)
+AND
+DialogGetInvolvedNPC(_Instance, 1, _TargetDummy)
+AND
+GetVarInteger(_TargetDummy, "LLDUMMY_LevelModifier", _TargetLevel)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TargetDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98", _TargetLevel);
+
+PROC
+LLDUMMY_UpdateDialogVars((GUIDSTRING)_Owner, (GUIDSTRING)_TargetDummy, (INTEGER)_TargetLevel)
+AND
+DB_DialogName("LLDUMMY_TargetDummySettings", _Instance)
+AND
+DB_DialogPlayers(_Instance, _Owner, _)
+AND
+DB_DialogNPCs(_Instance, _TargetDummy, _)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TargetDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98", _TargetLevel);
+//Global Level Modifier: [LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0]
+//DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0", _TargetLevel);
+//END_REGION
+
+IF
+CharacterUsedSkillOnTarget(_Player, _Target, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+IsTagged(_Target, "LLDUMMY_TrainingDummy", 0)
+AND
+GetPosition(_Target, _x, _y, _z)
+THEN
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+
+IF
+CharacterUsedSkillAtPosition(_Player, _x, _y, _z, "Target_LLDUMMY_TrainingDummy", _, _)
+THEN
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z)
+THEN
+NOT DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+LLDUMMY_SummonTargetDummy(_Player, _x, _y, _z);
+
+PROC
+LLDUMMY_SummonTargetDummy((CHARACTERGUID)_Owner, (REAL)_x, (REAL)_y, (REAL)_z)
+AND
+TemporaryCharacterCreateAtPosition(_x, _y, _z, "LLDUMMY_TargetDummy_A_985acfab-b221-4221-8263-fa00797e8883", 0, _TargetDummy)
+THEN
+SetVarObject(_TargetDummy, "LLDUMMY_Owner", _Owner);
+CharacterLookAt(_TargetDummy, _Owner, 1);
+LLDUMMY_LevelUpTargetDummy(_TargetDummy);
+
+IF
+StoryEvent((CHARACTERGUID)_Character, "LLDUMMY_TargetDummy_OnDamageTaken")
+AND
+GetVarFloat(_Character, "LLDUMMY_TargetDummy_OnDamageTaken.Percentage", _DamagePercentage)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterCharacterEvent(_TargetDummy, _Attacker, "LLDUMMY_SetAttackerName")
+AND
+CharacterGetDisplayName(_Attacker, _, _Name)
+THEN
+SetVarString(_TargetDummy, "LLDUMMY_AttackerName", _Name);
+
+//REGION HOSTILE_CHATTING
+IF
+CharacterUsedSkillOnTarget(_Player, _Target, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+IsTagged(_Target, "LLDUMMY_TrainingDummy", 1)
+THEN
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, (CHARACTERGUID)_Target);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target)
+THEN
+NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
+ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TargetDummySettings", 0, "", 1, 30.0);
+//END_REGION
 EXITSECTION
 
 ENDEXITSECTION

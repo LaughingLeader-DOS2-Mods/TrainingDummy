@@ -1,0 +1,3 @@
+Key	Content
+Target_LLDUMMY_TrainingDummy_DisplayName	<font color='#DD4444'>Deploy Training Dummy</font>
+Target_LLDUMMY_TrainingDummy_Description	Summon an unbreakable training dummy at the target location.<br><font color='#DD44FF'>The dummy can be interacted with to dismiss it or modify its configuration.</font><br><font color='#44FF44'>Use this skill on a hostile dummy to force dialog with it.</font>
