@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="6" build="0" />
+    <region id="MetaData">
+        <node id="root">
+            <attribute id="Module" value="40efe511-7489-455e-a9c8-ad7495b8c9f2" type="23" />
+            <attribute id="Name" value="TrainingDummy" type="23" />
+            <attribute id="Type" value="Add-on" type="23" />
+            <attribute id="UUID" value="0cdaab4d-0d65-49a1-a601-41d6e437aac1" type="23" />
+        </node>
+    </region>
+</save>

@@ -1,0 +1,52 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnInit")
+THEN
+DB_Dialogs(_TargetDummy, "LLDUMMY_TargetDummySettings");
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnSummoned")
+AND
+CharacterGetOwner(_TargetDummy, _Owner)
+THEN
+SetVarObject(_TargetDummy, "LLDUMMY_Owner", _Owner);
+CharacterLookAt(_TargetDummy, _Owner, 1);
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_OnDamageTaken")
+THEN
+CharacterSetHitpointsPercentage(_TargetDummy, 100.0);
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_LevelUpDummy")
+AND
+GetVarInteger(_TargetDummy, "LLDUMMY_LevelModifier", _TargetLevel)
+AND
+CharacterGetLevel(_TargetDummy, _Level)
+THEN
+LLDUMMY_LevelUpTargetDummy(_TargetDummy, _Level, _TargetLevel);
+
+PROC
+LLDUMMY_LevelUpTargetDummy((CHARACTERGUID)_TargetDummy, (INTEGER)_Current, (INTEGER)_Next)
+AND
+_Next > _Current
+THEN
+CharacterLevelUpTo(_TargetDummy, _Next);
+
+PROC
+LLDUMMY_LevelUpTargetDummy((CHARACTERGUID)_TargetDummy, (INTEGER)_Current, (INTEGER)_Next)
+AND
+_Next < _Current
+AND
+GetTemplate(_TargetDummy, _Template)
+THEN
+Transform(_TargetDummy, _Template, 0, 0, 1);
+CharacterLevelUpTo(_TargetDummy, _Next);
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "LeaderLib_11__Start"

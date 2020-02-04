@@ -1,0 +1,46 @@
+INIT
+	CHARACTER:__Me
+	EXTERN INT:%LLDUMMY_LevelModifier = 0
+EVENTS
+
+EVENT LLDUMMY_TargetDummy_OnInit
+ON
+	OnInit()
+ACTIONS
+	CharacterSetImmortal(__Me, 1)
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnInit")
+	
+EVENT LLDUMMY_TargetDummy_OnSummoned
+ON
+	OnCharacterStatusApplied(__Me, "SUMMONING")
+ACTIONS
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnSummoned")
+	
+EVENT LLDUMMY_IncreaseLevel
+ON
+	OnCharacterFlagSet("LLDUMMY_Commands_IncreaseLevel", __Me)
+ACTIONS
+	Add(%LLDUMMY_LevelModifier, 1)
+	Clamp(%LLDUMMY_LevelModifier, 1, 35)
+	CharacterEvent(__Me, "LLDUMMY_LevelUpDummy")
+	
+EVENT LLDUMMY_DecreaseLevel
+ON
+	OnCharacterFlagSet("LLDUMMY_Commands_DecreaseLevel", __Me)
+ACTIONS
+	Subtract(%LLDUMMY_LevelModifier, 1)
+	Clamp(%LLDUMMY_LevelModifier, 1, 35)
+	CharacterEvent(__Me, "LLDUMMY_LevelUpDummy")
+	
+EVENT LLDUMMY_TargetDummy_OnDamageTaken
+VARS
+	DAMAGE:_DamageType
+	FLOAT:_Percentage
+	CHARACTER:_CharacterSource
+	ITEM:_ItemSource
+ON
+	OnDamage(_DamageType, _Percentage, _CharacterSource, _ItemSource)
+ACTIONS
+	//SetHealth(__Me, 1.0)
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnDamageTaken")
+	CombatLogText(__Me, "LLDUMMY_TargetDummy_OnDamageTaken", 0, 0)
