@@ -146,6 +146,7 @@ LLDUMMY_SummonTargetDummy((CHARACTERGUID)_Owner, (REAL)_x, (REAL)_y, (REAL)_z)
 AND
 TemporaryCharacterCreateAtPosition(_x, _y, _z, "LLDUMMY_TargetDummy_A_985acfab-b221-4221-8263-fa00797e8883", 0, _TargetDummy)
 THEN
+SetTag(_TargetDummy, "LeaderLib_TemporaryCharacter");
 SetVarObject(_TargetDummy, "LLDUMMY_Owner", _Owner);
 CharacterLookAt(_TargetDummy, _Owner, 1);
 LLDUMMY_LevelUpTargetDummy(_TargetDummy);
@@ -176,10 +177,68 @@ IF
 SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
 AND
 DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target)
+AND
+ObjectExists(_Target, 1)
 THEN
 NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
-ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TargetDummySettings", 0, "", 1, 30.0);
+//ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TargetDummySettings", 0, "", 1, 30.0);
+//TeleportTo(_Player, _Target, "", 0, 1);
+Proc_StartDialog(0, "LLDUMMY_TargetDummySettings", _Target, _Player);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target)
+THEN
+NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_DieNow")
+AND
+CharacterIsSummon(_TargetDummy, 1)
+THEN
+CharacterDieImmediate(_TargetDummy, 0, "LifeTime", _TargetDummy);
+
+IF
+DialogEnded("LLDUMMY_TargetDummySettings", _Instance)
+AND
+DialogGetInvolvedNPC(_Instance, 1, _TargetDummy)
+AND
+ObjectGetFlag(_TargetDummy, "LLDUMMY_Commands_Destroy", 1)
+THEN
+SetStoryEvent(_TargetDummy, "LLDUMMY_TargetDummy_Destroy");
+
+IF
+StoryEvent((CHARACTERGUID)_TargetDummy, "LLDUMMY_TargetDummy_DieNow")
+AND
+IsTagged(_TargetDummy, "LeaderLib_TemporaryCharacter", 1)
+THEN
+RemoveTemporaryCharacter(_TargetDummy);
 //END_REGION
+
+//REGION ALIGNMENT
+/*
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetHostile", (CHARACTERGUID)_TargetDummy, _)
+AND
+IsTagged(_TargetDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TargetDummy, "Evil");
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetNeutral", (CHARACTERGUID)_TargetDummy, _)
+AND
+IsTagged(_TargetDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TargetDummy, "Neutral");
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetGood", (CHARACTERGUID)_TargetDummy, _)
+AND
+IsTagged(_TargetDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TargetDummy, "Good");
+*/
 EXITSECTION
 
 ENDEXITSECTION

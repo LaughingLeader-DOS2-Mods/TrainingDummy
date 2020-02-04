@@ -113,7 +113,7 @@
                                     "flag" : [
                                        {
                                           "name" : {"type" : 22, "value" : "LLDUMMY_Commands_SetNeutral"},
-                                          "paramval" : {"type" : 4, "value" : 1},
+                                          "paramval" : {"type" : 4, "value" : 0},
                                           "value" : {"type" : 19, "value" : 1}
                                        }
                                     ],"type" : {"type" : 22, "value" : "Character"}}
@@ -1361,7 +1361,7 @@
                                     "flag" : [
                                        {
                                           "name" : {"type" : 22, "value" : "LLDUMMY_Commands_SetAlly"},
-                                          "paramval" : {"type" : 4, "value" : 1},
+                                          "paramval" : {"type" : 4, "value" : 0},
                                           "value" : {"type" : 19, "value" : 1}
                                        }
                                     ],"type" : {"type" : 22, "value" : "Character"}}

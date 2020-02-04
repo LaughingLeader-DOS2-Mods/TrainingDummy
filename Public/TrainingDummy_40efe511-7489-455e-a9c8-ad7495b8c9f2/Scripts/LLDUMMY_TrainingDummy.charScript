@@ -113,18 +113,19 @@ ACTIONS
 EVENT LLDUMMY_TargetDummy_Dismiss
 ON
 	OnRegionLeft(__Me, _, _)
-	OnCharacterFlagSet("LLDUMMY_Commands_Destroy", __Me)
+	//OnCharacterFlagSet("LLDUMMY_Commands_Destroy", __Me)
+	OnCharacterEvent(__Me, "LLDUMMY_TargetDummy_Destroy")
 ACTIONS
 	CharacterSetImmortal(__Me, 0)
 	PlayEffectAt(__Me, "RS3_FX_GP_Impacts_Grenade_ClusterBomb_01")
-	CharacterDie(__Me, Explode, __Me)
+	CharacterEvent(__Me, "LLDUMMY_TargetDummy_DieNow")
+	//CharacterDie(__Me, KnockedDown, __Me)
 	
 EVENT LLDUMMY_Commands_SetHostile
 ON
 	OnCharacterFlagSet("LLDUMMY_Commands_SetHostile", __Me)
 ACTIONS
 	SetFaction(__Me, "Evil")
-	CharacterSetHasDialog(__Me, 1)
 
 EVENT LLDUMMY_Commands_SetNeutral
 ON
