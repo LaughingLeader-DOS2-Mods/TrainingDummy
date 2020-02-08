@@ -1,6 +1,6 @@
 
 local function GameSessionLoad()
-	Ext.Print("[TargetDummy:Bootstrap.lua] Session is loading.")
+	Ext.Print("[TrainingDummy:Bootstrap.lua] Session is loading.")
 	if _G["LeaderLib"] ~= nil then
 
 	end

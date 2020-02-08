@@ -1,0 +1,245 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnDamageTaken")
+THEN
+CharacterSetHitpointsPercentage(_TrainingDummy, 100.0);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
+THEN
+DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummySettings");
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
+AND
+CharacterIsSummon(_TrainingDummy, 1)
+THEN
+CharacterSetSummonLifetime(_TrainingDummy, -1);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnSummoned")
+AND
+CharacterGetOwner(_TrainingDummy, _Owner)
+AND
+_Owner != _TrainingDummy
+THEN
+SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
+CharacterLookAt(_TrainingDummy, _Owner, 1);
+LLDUMMY_LevelUpTrainingDummy(_TrainingDummy);
+
+PROC
+LLDUMMY_LevelUpTrainingDummy((CHARACTERGUID)_TrainingDummy)
+AND
+GetVarObject(_TrainingDummy, "LLDUMMY_Owner", (CHARACTERGUID)_Owner)
+AND
+GetVarInteger(_TrainingDummy, "LLDUMMY_LastLevelModifier", _TargetLevel)
+AND
+_TargetLevel > 0
+AND
+CharacterGetLevel(_TrainingDummy, _Level)
+THEN
+SetVarInteger(_TrainingDummy, "LLDUMMY_LevelModifier", _TargetLevel);
+LLDUMMY_LevelUpTrainingDummy(_TrainingDummy, _Level, _TargetLevel);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_LevelUp")
+AND
+GetVarInteger(_TrainingDummy, "LLDUMMY_LevelModifier", _Modifier)
+AND
+GetVarObject(_TrainingDummy, "LLDUMMY_Owner", (CHARACTERGUID)_Owner)
+AND
+CharacterGetLevel(_TrainingDummy, _DummyLevel)
+AND
+CharacterGetLevel(_Owner, _Level)
+AND
+IntegerSum(_Level, _Modifier, _Next)
+THEN
+LeaderLog_LogInt("DEBUG", "[LaughingLeader_TrainingDummy:LLDUMMY_TrainingDummy_LevelUp] Leveling dummy to ", _Next, " from ", _DummyLevel, "");
+LLDUMMY_LevelUpTrainingDummy(_TrainingDummy, _DummyLevel, _Next);
+SetVarInteger(_Owner, "LLDUMMY_LastLevelModifier", _Modifier);
+LLDUMMY_UpdateDialogVars(_Owner, _TrainingDummy, _Modifier);
+
+PROC
+LLDUMMY_LevelUpTrainingDummy((CHARACTERGUID)_TrainingDummy, (INTEGER)_Current, (INTEGER)_Next)
+AND
+_Next > 0
+AND
+_Next > _Current
+THEN
+CharacterLevelUpTo(_TrainingDummy, _Next);
+
+PROC
+LLDUMMY_LevelUpTrainingDummy((CHARACTERGUID)_TrainingDummy, (INTEGER)_Current, (INTEGER)_Next)
+AND
+_Next > 0
+AND
+_Next < _Current
+AND
+GetTemplate(_TrainingDummy, _Template)
+THEN
+Transform(_TrainingDummy, _Template, 0, 0, 1);
+CharacterLevelUpTo(_TrainingDummy, _Next);
+
+//REGION DIALOG_VAR
+/*
+IF
+DialogStarted("LLDUMMY_TrainingDummySettings", _Instance)
+AND
+DialogGetInvolvedPlayer(_Instance, 1, _Player)
+AND
+GetVarInteger(_Player, "LLDUMMY_LevelModifier", _GlobalTargetLevel)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0", _GlobalTargetLevel);
+*/
+
+IF
+DialogStarted("LLDUMMY_TrainingDummySettings", _Instance)
+AND
+DialogGetInvolvedNPC(_Instance, 1, _TrainingDummy)
+AND
+GetVarInteger(_TrainingDummy, "LLDUMMY_LevelModifier", _TargetLevel)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98", _TargetLevel);
+
+PROC
+LLDUMMY_UpdateDialogVars((GUIDSTRING)_Owner, (GUIDSTRING)_TrainingDummy, (INTEGER)_TargetLevel)
+AND
+DB_DialogName("LLDUMMY_TrainingDummySettings", _Instance)
+AND
+DB_DialogPlayers(_Instance, _Owner, _)
+AND
+DB_DialogNPCs(_Instance, _TrainingDummy, _)
+THEN
+DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98", _TargetLevel);
+//Global Level Modifier: [LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0]
+//DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0", _TargetLevel);
+//END_REGION
+
+IF
+CharacterUsedSkillOnTarget(_Player, _Target, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+IsTagged(_Target, "LLDUMMY_TrainingDummy", 0)
+AND
+GetPosition(_Target, _x, _y, _z)
+THEN
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+
+IF
+CharacterUsedSkillAtPosition(_Player, _x, _y, _z, "Target_LLDUMMY_TrainingDummy", _, _)
+THEN
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z)
+THEN
+NOT DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
+LLDUMMY_SummonTrainingDummy(_Player, _x, _y, _z);
+
+PROC
+LLDUMMY_SummonTrainingDummy((CHARACTERGUID)_Owner, (REAL)_x, (REAL)_y, (REAL)_z)
+AND
+TemporaryCharacterCreateAtPosition(_x, _y, _z, "LLDUMMY_TrainingDummy_A_985acfab-b221-4221-8263-fa00797e8883", 0, _TrainingDummy)
+THEN
+SetTag(_TrainingDummy, "LeaderLib_TemporaryCharacter");
+SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
+CharacterLookAt(_TrainingDummy, _Owner, 1);
+LLDUMMY_LevelUpTrainingDummy(_TrainingDummy);
+
+IF
+StoryEvent((CHARACTERGUID)_Character, "LLDUMMY_TrainingDummy_OnDamageTaken")
+AND
+GetVarFloat(_Character, "LLDUMMY_TrainingDummy_OnDamageTaken.Percentage", _DamagePercentage)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterCharacterEvent(_TrainingDummy, _Attacker, "LLDUMMY_SetAttackerName")
+AND
+CharacterGetDisplayName(_Attacker, _, _Name)
+THEN
+SetVarString(_TrainingDummy, "LLDUMMY_AttackerName", _Name);
+
+//REGION HOSTILE_CHATTING
+IF
+CharacterUsedSkillOnTarget(_Player, _Target, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+IsTagged(_Target, "LLDUMMY_TrainingDummy", 1)
+THEN
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, (CHARACTERGUID)_Target);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target)
+AND
+ObjectExists(_Target, 1)
+THEN
+NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
+//ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TrainingDummySettings", 0, "", 1, 30.0);
+//TeleportTo(_Player, _Target, "", 0, 1);
+Proc_StartDialog(0, "LLDUMMY_TrainingDummySettings", _Target, _Player);
+
+IF
+SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target)
+THEN
+NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
+AND
+CharacterIsSummon(_TrainingDummy, 1)
+THEN
+CharacterDieImmediate(_TrainingDummy, 0, "LifeTime", _TrainingDummy);
+
+IF
+DialogEnded("LLDUMMY_TrainingDummySettings", _Instance)
+AND
+DialogGetInvolvedNPC(_Instance, 1, _TrainingDummy)
+AND
+ObjectGetFlag(_TrainingDummy, "LLDUMMY_Commands_Destroy", 1)
+THEN
+SetStoryEvent(_TrainingDummy, "LLDUMMY_TrainingDummy_Destroy");
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
+AND
+IsTagged(_TrainingDummy, "LeaderLib_TemporaryCharacter", 1)
+THEN
+RemoveTemporaryCharacter(_TrainingDummy);
+//END_REGION
+
+//REGION ALIGNMENT
+/*
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetHostile", (CHARACTERGUID)_TrainingDummy, _)
+AND
+IsTagged(_TrainingDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TrainingDummy, "Evil");
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetNeutral", (CHARACTERGUID)_TrainingDummy, _)
+AND
+IsTagged(_TrainingDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TrainingDummy, "Neutral");
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_SetGood", (CHARACTERGUID)_TrainingDummy, _)
+AND
+IsTagged(_TrainingDummy, "LLDUMMY_TrainingDummy", 1)
+THEN
+SetFaction(_TrainingDummy, "Good");
+*/
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "LeaderLib_11__Start"

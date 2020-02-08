@@ -416,7 +416,7 @@
                                                 "TagText" : {
                                                    "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
                                                    "type" : 28,
-                                                   "value" : "*The dummy sits, motionless. Truly an unwavering force.*<br>Level Modifier: [LLDUMMY_TargetDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98]"
+                                                   "value" : "*The dummy sits, motionless. Truly an unwavering force.*<br>Level Modifier: [LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98]"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }

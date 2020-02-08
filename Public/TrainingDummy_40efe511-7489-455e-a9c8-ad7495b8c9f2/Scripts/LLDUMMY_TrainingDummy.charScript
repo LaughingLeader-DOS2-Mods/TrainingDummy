@@ -4,19 +4,19 @@ INIT
 	CHARACTER:%LLDUMMY_Owner = null
 EVENTS
 
-EVENT LLDUMMY_TargetDummy_OnInit
+EVENT LLDUMMY_TrainingDummy_OnInit
 ON
 	OnInit()
 ACTIONS
 	SetTag(__Me, "BLOCK_PICKPOCKET")
 	CharacterSetImmortal(__Me, 1)
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnInit")
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_OnInit")
 	
-EVENT LLDUMMY_TargetDummy_OnSummoned
+EVENT LLDUMMY_TrainingDummy_OnSummoned
 ON
 	OnCharacterStatusApplied(__Me, "SUMMONING")
 ACTIONS
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnSummoned")
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_OnSummoned")
 	
 EVENT LLDUMMY_IncreaseLevel
 VARS
@@ -35,7 +35,7 @@ THEN
 ELSE
 	Clamp(%LLDUMMY_LevelModifier, -35, 35)
 ENDIF
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_LevelUp")
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_LevelUp")
 	
 EVENT LLDUMMY_DecreaseLevel
 VARS
@@ -54,9 +54,9 @@ THEN
 ELSE
 	Clamp(%LLDUMMY_LevelModifier, -35, 35)
 ENDIF
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_LevelUp")
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_LevelUp")
 	
-EVENT LLDUMMY_TargetDummy_OnDamageTaken
+EVENT LLDUMMY_TrainingDummy_OnDamageTaken
 VARS
 	DAMAGE:_DamageType
 	FLOAT:_Percentage
@@ -107,18 +107,18 @@ ACTIONS
 	Cast(_Message, _Str)
 	DisplayCombatInfoText(__Me, _Message, 0.0)
 	DisplayText(__Me, "", 0.0)
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_OnDamageTaken")
-	//CombatLogText(__Me, "LLDUMMY_TargetDummy_OnDamageTaken", 0, 0)	
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_OnDamageTaken")
+	//CombatLogText(__Me, "LLDUMMY_TrainingDummy_OnDamageTaken", 0, 0)	
 
-EVENT LLDUMMY_TargetDummy_Dismiss
+EVENT LLDUMMY_TrainingDummy_Dismiss
 ON
 	OnRegionLeft(__Me, _, _)
 	//OnCharacterFlagSet("LLDUMMY_Commands_Destroy", __Me)
-	OnCharacterEvent(__Me, "LLDUMMY_TargetDummy_Destroy")
+	OnCharacterEvent(__Me, "LLDUMMY_TrainingDummy_Destroy")
 ACTIONS
 	CharacterSetImmortal(__Me, 0)
 	PlayEffectAt(__Me, "RS3_FX_GP_Impacts_Grenade_ClusterBomb_01")
-	CharacterEvent(__Me, "LLDUMMY_TargetDummy_DieNow")
+	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_DieNow")
 	//CharacterDie(__Me, KnockedDown, __Me)
 	
 EVENT LLDUMMY_Commands_SetHostile

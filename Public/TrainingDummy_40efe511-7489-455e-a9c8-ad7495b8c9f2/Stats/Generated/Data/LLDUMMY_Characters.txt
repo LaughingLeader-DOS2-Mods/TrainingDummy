@@ -1,4 +1,4 @@
-new entry "LLDUMMY_TargetDummy_Default"
+new entry "LLDUMMY_TrainingDummy_Default"
 type "Character"
 using "_Base"
 data "Act" "1"

@@ -16,7 +16,7 @@
                     <attribute id="DefaultValue" value="0" type="23" />
                     <attribute id="Description" value="" type="23" />
                     <attribute id="UUID" value="6860e13e-47b9-4734-b9ae-d7305da99c98" type="31" />
-                    <attribute id="name" value="LLDUMMY_TargetDummyLevelModifier" type="22" />
+                    <attribute id="name" value="LLDUMMY_TrainingDummyLevelModifier" type="22" />
                     <attribute id="type" value="Int" type="23" />
                 </node>
             </children>
