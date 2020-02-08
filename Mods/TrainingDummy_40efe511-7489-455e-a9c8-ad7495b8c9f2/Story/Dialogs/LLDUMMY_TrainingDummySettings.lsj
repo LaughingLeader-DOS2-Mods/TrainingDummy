@@ -266,7 +266,7 @@
                                                 "TagText" : {
                                                    "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
                                                    "type" : 28,
-                                                   "value" : "*Change the dummy's alignment.*"
+                                                   "value" : "*Change the dummy's alignment. Alliances are meant to be broken. Or forged.*"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -859,7 +859,7 @@
                                                 "TagText" : {
                                                    "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
                                                    "type" : 28,
-                                                   "value" : "*Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. Truly, this dummy will die a hero's death.*"
+                                                   "value" : "*Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero's death.*"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -1542,7 +1542,7 @@
          },
          "editorData" : {
             "needLayout" : {"type" : 19, "value" : 0},
-            "nextNodeId" : {"type" : 5, "value" : 33}
+            "nextNodeId" : {"type" : 5, "value" : 35}
          }
       }
    }

@@ -10,6 +10,8 @@ ON
 ACTIONS
 	SetTag(__Me, "BLOCK_PICKPOCKET")
 	CharacterSetImmortal(__Me, 1)
+	PlayEffectAt(__Me, "RS3_FX_Skills_Totem_Impact_Summon_Default_01")
+	PlayEffectAt(__Me, "RS3_FX_Skills_Totem_Target_Nebula_01")
 	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_OnInit")
 	
 EVENT LLDUMMY_TrainingDummy_OnSummoned

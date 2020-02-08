@@ -1,8 +1,16 @@
 Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
-
+LLDUMMY_InitSettings();
 KBSECTION
+PROC
+LLDUMMY_InitSettings()
+THEN
+LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_A_985acfab-b221-4221-8263-fa00797e8883");
+LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_B_63cc1423-69ee-4ad2-b730-bf1b118e017f");
+LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_G_d63d27a9-6468-4c25-81a6-860a39fd49ac");
+LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_H_13a23458-aee2-42d5-9994-599a9557c54a");
+
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnDamageTaken")
 THEN
@@ -11,7 +19,9 @@ CharacterSetHitpointsPercentage(_TrainingDummy, 100.0);
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
 THEN
+DB_DoNotFace(_TrainingDummy);
 DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummySettings");
+ProcCharacterDisableAllCrimes(_TrainingDummy);
 
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
@@ -144,8 +154,13 @@ LLDUMMY_SummonTrainingDummy(_Player, _x, _y, _z);
 PROC
 LLDUMMY_SummonTrainingDummy((CHARACTERGUID)_Owner, (REAL)_x, (REAL)_y, (REAL)_z)
 AND
-TemporaryCharacterCreateAtPosition(_x, _y, _z, "LLDUMMY_TrainingDummy_A_985acfab-b221-4221-8263-fa00797e8883", 0, _TrainingDummy)
+LeaderLib_Array_QRY_Random("LLDUMMY.TrainingDummyTemplates")
+AND
+DB_LeaderLib_Array_Temp_RandomResult("LLDUMMY.TrainingDummyTemplates", _Index, _Template)
+AND
+TemporaryCharacterCreateAtPosition(_x, _y, _z, _Template, 0, _TrainingDummy)
 THEN
+NOT DB_LeaderLib_Array_Temp_RandomResult("LLDUMMY.TrainingDummyTemplates", _Index, _Template);
 SetTag(_TrainingDummy, "LeaderLib_TemporaryCharacter");
 SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
 CharacterLookAt(_TrainingDummy, _Owner, 1);
@@ -214,6 +229,12 @@ AND
 IsTagged(_TrainingDummy, "LeaderLib_TemporaryCharacter", 1)
 THEN
 RemoveTemporaryCharacter(_TrainingDummy);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
+THEN
+NOT DB_DoNotFace(_TrainingDummy);
+NOT DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummySettings");
 //END_REGION
 
 //REGION ALIGNMENT
@@ -239,6 +260,17 @@ IsTagged(_TrainingDummy, "LLDUMMY_TrainingDummy", 1)
 THEN
 SetFaction(_TrainingDummy, "Good");
 */
+
+IF
+NRD_OnHit(_Target, _Attacker, _Damage, _Handle)
+AND
+NRD_StatusGetInt(_Target, _Handle, "Dodged", 0)
+AND
+NRD_StatusGetInt(_Target, _Handle, "Missed", 0)
+AND
+NRD_StatusGetInt(_Target, _Handle, "Blocked", 0)
+THEN
+NRD_LuaCall("LeaderLib_Ext_ReduceDamage", (STRING)_Target, (STRING)_Attacker, (STRING)_Handle, "0.50");
 EXITSECTION
 
 ENDEXITSECTION
