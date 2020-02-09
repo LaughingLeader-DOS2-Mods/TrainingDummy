@@ -260,18 +260,23 @@ IsTagged(_TrainingDummy, "LLDUMMY_TrainingDummy", 1)
 THEN
 SetFaction(_TrainingDummy, "Good");
 */
+//END_REGION
+
+//REGION ADD_SKILL
+IF
+ObjectFlagSet("LLDUMMY_Commands_AddSkill", (CHARACTERGUID)_Player, _)
+THEN
+ObjectClearFlag(_Player, "LLDUMMY_Commands_AddSkill", 0);
+CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 1);
 
 IF
-NRD_OnHit(_Target, _Attacker, _Damage, _Handle)
-AND
-NRD_StatusGetInt(_Target, _Handle, "Dodged", 0)
-AND
-NRD_StatusGetInt(_Target, _Handle, "Missed", 0)
-AND
-NRD_StatusGetInt(_Target, _Handle, "Blocked", 0)
+ObjectFlagSet("LLDUMMY_Commands_RemoveSkill", (CHARACTERGUID)_Player, _)
 THEN
-NRD_LuaCall("LeaderLib_Ext_ReduceDamage", (STRING)_Target, (STRING)_Attacker, (STRING)_Handle, "0.50");
+ObjectClearFlag(_Player, "LLDUMMY_Commands_RemoveSkill", 0);
+CharacterRemoveSkill(_Player, "Target_LLDUMMY_TrainingDummy");
+//END_REGION
+
 EXITSECTION
 
 ENDEXITSECTION
-ParentTargetEdge "LeaderLib_11__Start"
+ParentTargetEdge "__Start"

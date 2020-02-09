@@ -1,0 +1,53 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+
+//REGION ADD_SKILL
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+DB_Origins(_Char)
+AND
+CharacterIsDead(_Char, 0)
+THEN
+CharacterAddSkill(_Char, "Target_LLDUMMY_TrainingDummy", 0);
+
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+THEN
+IterateParties("Iterator_LLDUMMY_AddSkill");
+TimerCancel("Timers_LLDUMMY_StopInitializationGoal");
+TimerLaunch("Timers_LLDUMMY_StopInitializationGoal", 500);
+
+IF
+StoryEvent((CHARACTERGUID)_Player, "LLDUMMY_Commands_AddSkill")
+AND
+CharacterIsSummon(_Player, 0)
+AND
+CharacterIsPartyFollower(_Player, 0)
+THEN
+CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 0);
+
+//Remove the training dummy skill from the active bar so players have to arrange it themselves
+IF
+SkillAdded(_Player, "Target_LLDUMMY_TrainingDummy", _)
+AND
+NRD_SkillBarFindSkill(_Player, "Target_LLDUMMY_TrainingDummy", _Slot)
+THEN
+NRD_SkillBarClear(_Player, _Slot);
+
+IF
+TimerFinished("Timers_LLDUMMY_StopInitializationGoal")
+THEN
+GoalCompleted;
+//END_REGION
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "__Start"
