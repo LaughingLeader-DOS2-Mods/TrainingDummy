@@ -24,12 +24,6 @@
 							{
 								"RootNodes": {
 									"type": 22,
-									"value": "5abca353-338c-4a24-aaa5-5eb9e5c3edb5"
-								}
-							},
-							{
-								"RootNodes": {
-									"type": 22,
 									"value": "aec316b1-fc39-4c59-a4c2-deceae0c9a9a"
 								}
 							}
@@ -139,7 +133,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Take your leave.*",
-																	"handle": "h4966520cg16bcg45ebg9a34g927815d56fc5"
+																	"handle": "h0907f3f4ga5edg4151gb820gb568bfb79aa6"
 																},
 																"stub": {
 																	"type": 19,
@@ -212,7 +206,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "335;891"
+													"value": "335;1329"
 												}
 											},
 											{
@@ -336,7 +330,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Increase the dummy's level.*",
-																	"handle": "hae38a15cge7ceg4889gbb1ag16e40d37c664"
+																	"handle": "h5197260fg8e9eg41beg8c68g8de8c9053db9"
 																},
 																"stub": {
 																	"type": 19,
@@ -567,7 +561,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Mark the dummy as a neutral.*",
-																	"handle": "hd9c4e7a4geb3bg4dcfga91bg88075dd3c414"
+																	"handle": "he7e082e4g1be9g4d52ga3deg98194ecc48da"
 																},
 																"stub": {
 																	"type": 19,
@@ -649,7 +643,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "655;891"
+													"value": "655;1110"
 												}
 											},
 											{
@@ -781,7 +775,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "975;672"
+													"value": "975;891"
 												}
 											},
 											{
@@ -902,7 +896,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Decrease the dummy's level.*",
-																	"handle": "h84b0125eg3c6eg496fg8792g91a6692c3ea7"
+																	"handle": "h3fa7b055g1903g44f7gbabdg6bd7c0a45913"
 																},
 																"stub": {
 																	"type": 19,
@@ -1036,6 +1030,212 @@
 								},
 								"UUID": {
 									"type": 22,
+									"value": "262c13cf-f82d-4ef0-88c3-d852d8a8addf"
+								},
+								"addressedspeaker": {
+									"type": 4,
+									"value": -1
+								},
+								"constructor": {
+									"type": 22,
+									"value": "TagQuestion"
+								},
+								"endnode": {
+									"type": 19,
+									"value": false
+								},
+								"exclusive": {
+									"type": 19,
+									"value": false
+								},
+								"optional": {
+									"type": 19,
+									"value": false
+								},
+								"speaker": {
+									"type": 4,
+									"value": 1
+								},
+								"stub": {
+									"type": 19,
+									"value": false
+								},
+								"transitionmode": {
+									"type": 1,
+									"value": 0
+								},
+								"waittime": {
+									"type": 6,
+									"value": -1.0
+								},
+								"GameData": [
+									{
+										"CameraTarget": {
+											"type": 4,
+											"value": -1
+										},
+										"CustomMovie": {
+											"type": 23,
+											"value": ""
+										},
+										"Emotion": {
+											"type": 23,
+											"value": "Default"
+										},
+										"ExtraWaitTime": {
+											"type": 4,
+											"value": 0
+										},
+										"SoundEvent": {
+											"type": 23,
+											"value": ""
+										},
+										"AiPersonalities": [
+											{}
+										],
+										"MusicInstrumentSounds": [
+											{}
+										],
+										"OriginSound": [
+											{}
+										]
+									}
+								],
+								"TaggedTexts": [
+									{
+										"TaggedText": [
+											{
+												"HasTagRule": {
+													"type": 19,
+													"value": true
+												},
+												"RuleGroup": [
+													{
+														"TagCombineOp": {
+															"type": 1,
+															"value": 0
+														},
+														"Rules": [
+															{}
+														]
+													}
+												],
+												"TagTexts": [
+													{
+														"TagText": [
+															{
+																"TagText": {
+																	"type": 28,
+																	"value": "*Change your mind.*",
+																	"handle": "ha79cae25g0368g4222gbf5fg4743b7e50c67"
+																},
+																"stub": {
+																	"type": 19,
+																	"value": true
+																}
+															}
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"Tags": [
+									{}
+								],
+								"checkflags": [
+									{}
+								],
+								"children": [
+									{
+										"child": [
+											{
+												"UUID": {
+													"type": 22,
+													"value": "77877c07-c4c4-4e1a-b832-4b3b80d87201"
+												}
+											}
+										]
+									}
+								],
+								"editorData": [
+									{
+										"data": [
+											{
+												"key": {
+													"type": 22,
+													"value": "ID"
+												},
+												"val": {
+													"type": 23,
+													"value": "N54"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "NodeContext"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "collapsed"
+												},
+												"val": {
+													"type": 23,
+													"value": "False"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "logicalname"
+												},
+												"val": {
+													"type": 23,
+													"value": "Question"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "position"
+												},
+												"val": {
+													"type": 23,
+													"value": "1295;672"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "sourcetemplate"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											}
+										]
+									}
+								],
+								"setflags": [
+									{}
+								]
+							},
+							{
+								"ShowOnce": {
+									"type": 19,
+									"value": false
+								},
+								"UUID": {
+									"type": 22,
 									"value": "39d8d1bb-0e58-40a8-82cb-70aa49ebb1f8"
 								},
 								"addressedspeaker": {
@@ -1133,7 +1333,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "Wait, noooo!",
-																	"handle": "h9a43ff8egf606g40a5g8a98g2696ed0e984f"
+																	"handle": "hbfb0e2e7g564fg4950ga810g528fa8dc9a26"
 																},
 																"stub": {
 																	"type": 19,
@@ -1144,7 +1344,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "Nooooo!",
-																	"handle": "h1654f200g19e7g49ecg9768ge55d898b5d0f"
+																	"handle": "haca8a109g4dddg4f2fgbcd5g190d6cb742b9"
 																},
 																"stub": {
 																	"type": 19,
@@ -1155,7 +1355,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "Why?!",
-																	"handle": "h3d951182gd246g4066gaafage53c12cc798c"
+																	"handle": "hdc388540g03c3g4d91gb102g3a71f9beb26b"
 																},
 																"stub": {
 																	"type": 19,
@@ -1166,7 +1366,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "B-but...!!!",
-																	"handle": "h92801640g860cg487bg9d79g11b0ab188c0c"
+																	"handle": "h3e183251g2510g4ae7g9aa5g3e13139667f4"
 																},
 																"stub": {
 																	"type": 19,
@@ -1177,7 +1377,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "Argh!!!",
-																	"handle": "h4388e306gdb4bg453dg84a1g79b51a7f7ba4"
+																	"handle": "hf9f10cd4g7be9g429dg92e9g76663056fdb0"
 																},
 																"stub": {
 																	"type": 19,
@@ -1188,7 +1388,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "<b>I'll have my revenge!</b>",
-																	"handle": "h6ba6accfg96a9g4910g924cg9c88e7b0a620"
+																	"handle": "h5505c133gce4dg479ag8b44g98e6fb93f9ae"
 																},
 																"stub": {
 																	"type": 19,
@@ -1199,7 +1399,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "<i>I'll remember this!</i>",
-																	"handle": "h89a1f682gb2d2g4cd5gb843gf0b2b24c7aab"
+																	"handle": "h7209ff90g124cg444dgb5f5g1986d162f01d"
 																},
 																"stub": {
 																	"type": 19,
@@ -1210,7 +1410,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "Nooooo!",
-																	"handle": "h6d2f14e7g7112g4378gb740gbda335597bb9"
+																	"handle": "h532f0ce0g7d8ag4d40gacc0g767999f3d2ec"
 																},
 																"stub": {
 																	"type": 19,
@@ -1283,7 +1483,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "655;453"
+													"value": "1615;453"
 												}
 											},
 											{
@@ -1545,7 +1745,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The dummy idles by.*",
-																	"handle": "hbdbba386g2182g404fga8a9g9badaf12be1b"
+																	"handle": "h0f00ebcag482eg4b4agb20dg046e15d9e83d"
 																},
 																"stub": {
 																	"type": 19,
@@ -1654,6 +1854,110 @@
 								},
 								"UUID": {
 									"type": 22,
+									"value": "77877c07-c4c4-4e1a-b832-4b3b80d87201"
+								},
+								"constructor": {
+									"type": 22,
+									"value": "Jump"
+								},
+								"endnode": {
+									"type": 19,
+									"value": false
+								},
+								"exclusive": {
+									"type": 19,
+									"value": false
+								},
+								"jumptarget": {
+									"type": 22,
+									"value": "aec316b1-fc39-4c59-a4c2-deceae0c9a9a"
+								},
+								"jumptargetpoint": {
+									"type": 1,
+									"value": 1
+								},
+								"optional": {
+									"type": 19,
+									"value": false
+								},
+								"transitionmode": {
+									"type": 1,
+									"value": 0
+								},
+								"waittime": {
+									"type": 6,
+									"value": -1.0
+								},
+								"Tags": [
+									{}
+								],
+								"children": [
+									{}
+								],
+								"editorData": [
+									{
+										"data": [
+											{
+												"key": {
+													"type": 22,
+													"value": "ID"
+												},
+												"val": {
+													"type": 23,
+													"value": "N56"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "collapsed"
+												},
+												"val": {
+													"type": 23,
+													"value": "False"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "logicalname"
+												},
+												"val": {
+													"type": 23,
+													"value": "Jump"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "position"
+												},
+												"val": {
+													"type": 23,
+													"value": "1615;672"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "sourcetemplate"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											}
+										]
+									}
+								]
+							},
+							{
+								"ShowOnce": {
+									"type": 19,
+									"value": false
+								},
+								"UUID": {
+									"type": 22,
 									"value": "784a7124-d071-4f1a-8cce-fdf596a25173"
 								},
 								"addressedspeaker": {
@@ -1751,7 +2055,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Change your mind.*",
-																	"handle": "hbd9328eag9142g49c9gae3ega76cb1329b2d"
+																	"handle": "hb6e9cbb4g197bg49acg8c07geffb8af870a5"
 																},
 																"stub": {
 																	"type": 19,
@@ -1833,7 +2137,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "655;1329"
+													"value": "655;1548"
 												}
 											},
 											{
@@ -2060,8 +2364,8 @@
 															{
 																"TagText": {
 																	"type": 28,
-																	"value": "*Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero's death.*",
-																	"handle": "hf623682egabc4g4eadgb314gab3b669428ed"
+																	"value": "[DESTROY] *Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero's death.*",
+																	"handle": "he6354e6agfe73g45c3g861bg63cd4dbbfbd0"
 																},
 																"stub": {
 																	"type": 19,
@@ -2087,7 +2391,7 @@
 											{
 												"UUID": {
 													"type": 22,
-													"value": "39d8d1bb-0e58-40a8-82cb-70aa49ebb1f8"
+													"value": "ecf4b9d3-8c5b-4fa7-afa7-23646aa89ad0"
 												}
 											}
 										]
@@ -2267,7 +2571,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The dummy sits, motionless. Truly an unwavering force.*<br>Level Modifier: [LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98]",
-																	"handle": "hbc9b3994gb245g4d53g96a8g5d41d891ff1c"
+																	"handle": "h57002239gfa8ag4fddgb8f7g1cdc2b6e8ee6"
 																},
 																"stub": {
 																	"type": 19,
@@ -2309,7 +2613,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The motionless dummy appears to be giving you the \"stink eye\".*",
-																	"handle": "h31aa7361gdd88g4520g8631gb338fa398bd4"
+																	"handle": "h9b59e903g6e95g4d7ag994fga213e60db934"
 																},
 																"stub": {
 																	"type": 19,
@@ -2343,7 +2647,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The dummy awaits your command. Well, not really, but it <i>feels </i>like it could be.*",
-																	"handle": "h1557a99bg778cg4d4eg8c69gf3cfb0b045fc"
+																	"handle": "h814e4d22gd764g444bg87e2g9c46d2699610"
 																},
 																"stub": {
 																	"type": 19,
@@ -2377,7 +2681,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The dummy gives you the \"cold shoulder\".*",
-																	"handle": "hb4f29450ga17ag4b42g9a46g596ac088284a"
+																	"handle": "hc717a8f4gf206g498fg9c23gc6b154b0a259"
 																},
 																"stub": {
 																	"type": 19,
@@ -2411,7 +2715,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*The dummy gives you the silent treatment.*",
-																	"handle": "h99176c32g3674g416eg89ebgfc2890d50969"
+																	"handle": "hedd2163cgb5bag4127g9626g96baf28996cf"
 																},
 																"stub": {
 																	"type": 19,
@@ -2437,12 +2741,6 @@
 											{
 												"UUID": {
 													"type": 22,
-													"value": "c3c5f87f-8e91-482b-9c9c-7ca34e8287b7"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
 													"value": "145b62d7-5b28-46bf-b230-42c6e47edec8"
 												}
 											},
@@ -2462,6 +2760,12 @@
 												"UUID": {
 													"type": 22,
 													"value": "8c6bce59-232c-4901-b8d4-18b62642a515"
+												}
+											},
+											{
+												"UUID": {
+													"type": 22,
+													"value": "c3c5f87f-8e91-482b-9c9c-7ca34e8287b7"
 												}
 											},
 											{
@@ -2742,7 +3046,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Grant the dummy bonuses.*",
-																	"handle": "hd28914d0g4ac1g4f6dgb41ag4736de107478"
+																	"handle": "he8847471ga516g4519gab56g9c736946d08f"
 																},
 																"stub": {
 																	"type": 19,
@@ -2948,7 +3252,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Change the dummy's alignment. Alliances are meant to be broken. Or forged.*",
-																	"handle": "h1999d903ga486g4f72g85a0geca4bfc7d7ed"
+																	"handle": "h735fa9c1g9a31g430agab48g6e21deaa6dec"
 																},
 																"stub": {
 																	"type": 19,
@@ -2974,12 +3278,6 @@
 											{
 												"UUID": {
 													"type": 22,
-													"value": "f8204846-026e-444f-a5b6-73c102eb0705"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
 													"value": "f781113f-c707-42a8-90fc-e1d6571a96b3"
 												}
 											},
@@ -2987,6 +3285,12 @@
 												"UUID": {
 													"type": 22,
 													"value": "14fbc113-7b48-46ff-940e-e0926b1f8bbf"
+												}
+											},
+											{
+												"UUID": {
+													"type": 22,
+													"value": "f8204846-026e-444f-a5b6-73c102eb0705"
 												}
 											},
 											{
@@ -3048,7 +3352,425 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "335;672"
+													"value": "335;1110"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "sourcetemplate"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											}
+										]
+									}
+								],
+								"setflags": [
+									{}
+								]
+							},
+							{
+								"ShowOnce": {
+									"type": 19,
+									"value": false
+								},
+								"UUID": {
+									"type": 22,
+									"value": "ecf4b9d3-8c5b-4fa7-afa7-23646aa89ad0"
+								},
+								"addressedspeaker": {
+									"type": 4,
+									"value": -1
+								},
+								"constructor": {
+									"type": 22,
+									"value": "TagAnswer"
+								},
+								"endnode": {
+									"type": 19,
+									"value": false
+								},
+								"exclusive": {
+									"type": 19,
+									"value": false
+								},
+								"optional": {
+									"type": 19,
+									"value": false
+								},
+								"speaker": {
+									"type": 4,
+									"value": -666
+								},
+								"stub": {
+									"type": 19,
+									"value": false
+								},
+								"transitionmode": {
+									"type": 1,
+									"value": 0
+								},
+								"waittime": {
+									"type": 6,
+									"value": -1.0
+								},
+								"GameData": [
+									{
+										"CameraTarget": {
+											"type": 4,
+											"value": -1
+										},
+										"CustomMovie": {
+											"type": 23,
+											"value": ""
+										},
+										"Emotion": {
+											"type": 23,
+											"value": "Default"
+										},
+										"ExtraWaitTime": {
+											"type": 4,
+											"value": 0
+										},
+										"SoundEvent": {
+											"type": 23,
+											"value": ""
+										},
+										"AiPersonalities": [
+											{}
+										],
+										"MusicInstrumentSounds": [
+											{}
+										],
+										"OriginSound": [
+											{}
+										]
+									}
+								],
+								"TaggedTexts": [
+									{
+										"TaggedText": [
+											{
+												"HasTagRule": {
+													"type": 19,
+													"value": true
+												},
+												"RuleGroup": [
+													{
+														"TagCombineOp": {
+															"type": 1,
+															"value": 0
+														},
+														"Rules": [
+															{}
+														]
+													}
+												],
+												"TagTexts": [
+													{
+														"TagText": [
+															{
+																"TagText": {
+																	"type": 28,
+																	"value": "*Destroy the dummy? This action cannot be reversed.*",
+																	"handle": "h69b19b89gdb53g43c5g9037g9ac474bbe0c7"
+																},
+																"stub": {
+																	"type": 19,
+																	"value": true
+																}
+															}
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"Tags": [
+									{}
+								],
+								"checkflags": [
+									{}
+								],
+								"children": [
+									{
+										"child": [
+											{
+												"UUID": {
+													"type": 22,
+													"value": "f58c5797-6160-4b1b-b7de-b469a83fd520"
+												}
+											},
+											{
+												"UUID": {
+													"type": 22,
+													"value": "262c13cf-f82d-4ef0-88c3-d852d8a8addf"
+												}
+											}
+										]
+									}
+								],
+								"editorData": [
+									{
+										"data": [
+											{
+												"key": {
+													"type": 22,
+													"value": "ID"
+												},
+												"val": {
+													"type": 23,
+													"value": "N52"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "NodeContext"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "collapsed"
+												},
+												"val": {
+													"type": 23,
+													"value": "False"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "logicalname"
+												},
+												"val": {
+													"type": 23,
+													"value": "Answer"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "position"
+												},
+												"val": {
+													"type": 23,
+													"value": "655;453"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "sourcetemplate"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											}
+										]
+									}
+								],
+								"setflags": [
+									{}
+								]
+							},
+							{
+								"ShowOnce": {
+									"type": 19,
+									"value": false
+								},
+								"UUID": {
+									"type": 22,
+									"value": "f58c5797-6160-4b1b-b7de-b469a83fd520"
+								},
+								"addressedspeaker": {
+									"type": 4,
+									"value": -1
+								},
+								"constructor": {
+									"type": 22,
+									"value": "TagQuestion"
+								},
+								"endnode": {
+									"type": 19,
+									"value": false
+								},
+								"exclusive": {
+									"type": 19,
+									"value": false
+								},
+								"optional": {
+									"type": 19,
+									"value": false
+								},
+								"speaker": {
+									"type": 4,
+									"value": 1
+								},
+								"stub": {
+									"type": 19,
+									"value": false
+								},
+								"transitionmode": {
+									"type": 1,
+									"value": 0
+								},
+								"waittime": {
+									"type": 6,
+									"value": -1.0
+								},
+								"GameData": [
+									{
+										"CameraTarget": {
+											"type": 4,
+											"value": -1
+										},
+										"CustomMovie": {
+											"type": 23,
+											"value": ""
+										},
+										"Emotion": {
+											"type": 23,
+											"value": "Default"
+										},
+										"ExtraWaitTime": {
+											"type": 4,
+											"value": 0
+										},
+										"SoundEvent": {
+											"type": 23,
+											"value": ""
+										},
+										"AiPersonalities": [
+											{}
+										],
+										"MusicInstrumentSounds": [
+											{}
+										],
+										"OriginSound": [
+											{}
+										]
+									}
+								],
+								"TaggedTexts": [
+									{
+										"TaggedText": [
+											{
+												"HasTagRule": {
+													"type": 19,
+													"value": true
+												},
+												"RuleGroup": [
+													{
+														"TagCombineOp": {
+															"type": 1,
+															"value": 0
+														},
+														"Rules": [
+															{}
+														]
+													}
+												],
+												"TagTexts": [
+													{
+														"TagText": [
+															{
+																"TagText": {
+																	"type": 28,
+																	"value": "*Yes. Wipe this dummy from existence.*",
+																	"handle": "h3a7a2ee7g0926g4f07g8e8cg57636a889ea2"
+																},
+																"stub": {
+																	"type": 19,
+																	"value": true
+																}
+															}
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"Tags": [
+									{}
+								],
+								"checkflags": [
+									{}
+								],
+								"children": [
+									{
+										"child": [
+											{
+												"UUID": {
+													"type": 22,
+													"value": "39d8d1bb-0e58-40a8-82cb-70aa49ebb1f8"
+												}
+											}
+										]
+									}
+								],
+								"editorData": [
+									{
+										"data": [
+											{
+												"key": {
+													"type": 22,
+													"value": "ID"
+												},
+												"val": {
+													"type": 23,
+													"value": "N53"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "NodeContext"
+												},
+												"val": {
+													"type": 23,
+													"value": ""
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "collapsed"
+												},
+												"val": {
+													"type": 23,
+													"value": "False"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "logicalname"
+												},
+												"val": {
+													"type": 23,
+													"value": "Question"
+												}
+											},
+											{
+												"key": {
+													"type": 22,
+													"value": "position"
+												},
+												"val": {
+													"type": 23,
+													"value": "1295;453"
 												}
 											},
 											{
@@ -3172,7 +3894,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Mark the dummy as a hostile.*",
-																	"handle": "h583a8832g211ag4501g84cfgc3e8def672e2"
+																	"handle": "h1ec91211g59a0g42d0gbc6fgbf1d8b70cc0b"
 																},
 																"stub": {
 																	"type": 19,
@@ -3254,7 +3976,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "655;672"
+													"value": "655;891"
 												}
 											},
 											{
@@ -3403,7 +4125,7 @@
 																"TagText": {
 																	"type": 28,
 																	"value": "*Mark the dummy as an ally.*",
-																	"handle": "h7eb8a4f7g62efg4f20g83ccg0974b0e3e475"
+																	"handle": "hb8aeeff3g1167g4f5egbe5egf8f5dd2401e9"
 																},
 																"stub": {
 																	"type": 19,
@@ -3485,7 +4207,7 @@
 												},
 												"val": {
 													"type": 23,
-													"value": "655;1110"
+													"value": "655;1329"
 												}
 											},
 											{
@@ -3671,7 +4393,7 @@
 				},
 				"nextNodeId": {
 					"type": 5,
-					"value": 42
+					"value": 56
 				}
 			}
 		}

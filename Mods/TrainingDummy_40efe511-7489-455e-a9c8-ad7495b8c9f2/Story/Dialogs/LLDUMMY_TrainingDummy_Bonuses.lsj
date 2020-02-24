@@ -1,2077 +1,999 @@
 {
-	"save": {
-		"header": {
-			"time": 0,
-			"version": "2.0.8.2"
-		},
-		"regions": {
-			"dialog": {
-				"UUID": {
-					"type": 22,
-					"value": "629b73ff-a002-494c-99e3-2aefe30474db"
-				},
-				"automated": {
-					"type": 19,
-					"value": false
-				},
-				"category": {
-					"type": 23,
-					"value": "Generic NPC Dialog"
-				},
-				"nodes": [
-					{
-						"RootNodes": [
-							{
-								"RootNodes": {
-									"type": 22,
-									"value": "eebe5553-fdb3-4310-a408-0e5c72edae63"
-								}
-							}
-						],
-						"node": [
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagAnswer"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 0
-								},
-								"stub": {
-									"type": 19,
-									"value": true
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 2
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The dummy is ENHANCED!*",
-																	"handle": "hae61b90ag1500g4b27g9f84g2dfd04fb2e60"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "61d52c3f-93d7-40f7-8802-47dd51bff796"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N53"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Answer"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "655;-204"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "2357d8b7-b35e-4f39-979c-9cb9a106302a"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagQuestion"
-								},
-								"endnode": {
-									"type": 19,
-									"value": true
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": false
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*Stop giving the dummy bonuses.*",
-																	"handle": "h04c3e195g23a0g4095gbd44g12f0b90d8579"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N47"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Question"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "335;672"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "61d52c3f-93d7-40f7-8802-47dd51bff796"
-								},
-								"constructor": {
-									"type": 22,
-									"value": "Jump"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"jumptarget": {
-									"type": 22,
-									"value": "eebe5553-fdb3-4310-a408-0e5c72edae63"
-								},
-								"jumptargetpoint": {
-									"type": 1,
-									"value": 1
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"Tags": [
-									{}
-								],
-								"children": [
-									{}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N55"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Jump"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "975;-204"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": true
-								},
-								"UUID": {
-									"type": 22,
-									"value": "b8d5572d-373a-42d4-96da-1ec879aedece"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagQuestion"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": true
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*Clear all bonus Physical Armor from the dummy.*",
-																	"handle": "hab13ee34g8d54g457bg95acgdf80bfa04e94"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "de363c13-ec6b-4ccd-a929-3198d00e8d31"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N60"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Question"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "335;234"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{
-										"flaggroup": [
-											{
-												"type": {
-													"type": 22,
-													"value": "Character"
-												},
-												"flag": [
-													{
-														"name": {
-															"type": 22,
-															"value": "LLDUMMY_Commands_ClearArmor"
-														},
-														"paramval": {
-															"type": 4,
-															"value": 0
-														},
-														"value": {
-															"type": 19,
-															"value": true
-														}
-													}
-												]
-											}
-										]
-									}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": true
-								},
-								"UUID": {
-									"type": 22,
-									"value": "c658ea07-93f6-4142-bad0-e652b407d347"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagQuestion"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": true
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*Clear all bonus Magic Armor from the dummy.*",
-																	"handle": "he169a4a2g0a17g4b1fga268g864e211b0087"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "de363c13-ec6b-4ccd-a929-3198d00e8d31"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N65"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Question"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "335;453"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{
-										"flaggroup": [
-											{
-												"type": {
-													"type": 22,
-													"value": "Character"
-												},
-												"flag": [
-													{
-														"name": {
-															"type": 22,
-															"value": "LLDUMMY_Commands_ClearMagicArmor"
-														},
-														"paramval": {
-															"type": 4,
-															"value": 0
-														},
-														"value": {
-															"type": 19,
-															"value": true
-														}
-													}
-												]
-											}
-										]
-									}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "d83e0a93-4697-46ee-b9d7-4d4b9cfc32d1"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagQuestion"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": false
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*Grant the dummy bonus Physical Armor.*",
-																	"handle": "h2529020dg5e78g4396gaaf8g66cd55b802d8"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N48"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Question"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "335;-204"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{
-										"flaggroup": [
-											{
-												"type": {
-													"type": 22,
-													"value": "Character"
-												},
-												"flag": [
-													{
-														"name": {
-															"type": 22,
-															"value": "LLDUMMY_Commands_AddArmor"
-														},
-														"paramval": {
-															"type": 4,
-															"value": 0
-														},
-														"value": {
-															"type": 19,
-															"value": true
-														}
-													}
-												]
-											}
-										]
-									}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "de363c13-ec6b-4ccd-a929-3198d00e8d31"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagAnswer"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 0
-								},
-								"stub": {
-									"type": 19,
-									"value": true
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 2
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The dummy's power is reduced...*",
-																	"handle": "hefba222bg25e0g4e92g9fc1ga2b49f6b9efb"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "61d52c3f-93d7-40f7-8802-47dd51bff796"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N61"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Answer"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "655;15"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "e9009482-33f7-411e-afcc-4ec6e6edc0eb"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagQuestion"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": false
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*Grant the dummy bonus Magic Armor.*",
-																	"handle": "hf61e482egd713g4789gb174g92de4723bb4a"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N59"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Question"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "335;15"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{
-										"flaggroup": [
-											{
-												"type": {
-													"type": 22,
-													"value": "Character"
-												},
-												"flag": [
-													{
-														"name": {
-															"type": 22,
-															"value": "LLDUMMY_Commands_AddMagicArmor"
-														},
-														"paramval": {
-															"type": 4,
-															"value": 0
-														},
-														"value": {
-															"type": 19,
-															"value": true
-														}
-													}
-												]
-											}
-										]
-									}
-								]
-							},
-							{
-								"ShowOnce": {
-									"type": 19,
-									"value": false
-								},
-								"UUID": {
-									"type": 22,
-									"value": "eebe5553-fdb3-4310-a408-0e5c72edae63"
-								},
-								"addressedspeaker": {
-									"type": 4,
-									"value": -1
-								},
-								"constructor": {
-									"type": 22,
-									"value": "TagGreeting"
-								},
-								"endnode": {
-									"type": 19,
-									"value": false
-								},
-								"exclusive": {
-									"type": 19,
-									"value": false
-								},
-								"optional": {
-									"type": 19,
-									"value": false
-								},
-								"speaker": {
-									"type": 4,
-									"value": 1
-								},
-								"stub": {
-									"type": 19,
-									"value": false
-								},
-								"transitionmode": {
-									"type": 1,
-									"value": 0
-								},
-								"waittime": {
-									"type": 6,
-									"value": -1.0
-								},
-								"GameData": [
-									{
-										"CameraTarget": {
-											"type": 4,
-											"value": -1
-										},
-										"CustomMovie": {
-											"type": 23,
-											"value": ""
-										},
-										"Emotion": {
-											"type": 23,
-											"value": "Default"
-										},
-										"ExtraWaitTime": {
-											"type": 4,
-											"value": 0
-										},
-										"SoundEvent": {
-											"type": 23,
-											"value": ""
-										},
-										"AiPersonalities": [
-											{}
-										],
-										"MusicInstrumentSounds": [
-											{}
-										],
-										"OriginSound": [
-											{}
-										]
-									}
-								],
-								"TaggedTexts": [
-									{
-										"TaggedText": [
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*You ponder over what bonuses to grant the dummy.*",
-																	"handle": "hf32d213eg931cg4922gb035ga0419ea3d29b"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											},
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The motionless dummy appears to be giving you the \"stink eye\".*",
-																	"handle": "h841f1362g88cag41c2g9611g60b2f865a69a"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											},
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The dummy awaits your command. Well, not really, but it <i>feels </i>like it could be.*",
-																	"handle": "hcc39c474g8d39g4108g8a8dg19ed45594dca"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											},
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The dummy gives you the \"cold shoulder\".*",
-																	"handle": "h2bd13dbbgfb7bg4160ga5b9g862b1ca12118"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											},
-											{
-												"HasTagRule": {
-													"type": 19,
-													"value": true
-												},
-												"RuleGroup": [
-													{
-														"TagCombineOp": {
-															"type": 1,
-															"value": 0
-														},
-														"Rules": [
-															{}
-														]
-													}
-												],
-												"TagTexts": [
-													{
-														"TagText": [
-															{
-																"TagText": {
-																	"type": 28,
-																	"value": "*The dummy gives you the silent treatment.*",
-																	"handle": "heedbbea7gedcag4316g88e6gd39a94678ed9"
-																},
-																"stub": {
-																	"type": 19,
-																	"value": true
-																}
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"Tags": [
-									{}
-								],
-								"checkflags": [
-									{}
-								],
-								"children": [
-									{
-										"child": [
-											{
-												"UUID": {
-													"type": 22,
-													"value": "d83e0a93-4697-46ee-b9d7-4d4b9cfc32d1"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
-													"value": "e9009482-33f7-411e-afcc-4ec6e6edc0eb"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
-													"value": "b8d5572d-373a-42d4-96da-1ec879aedece"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
-													"value": "c658ea07-93f6-4142-bad0-e652b407d347"
-												}
-											},
-											{
-												"UUID": {
-													"type": 22,
-													"value": "2357d8b7-b35e-4f39-979c-9cb9a106302a"
-												}
-											}
-										]
-									}
-								],
-								"editorData": [
-									{
-										"data": [
-											{
-												"key": {
-													"type": 22,
-													"value": "ID"
-												},
-												"val": {
-													"type": 23,
-													"value": "N1"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "NodeContext"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "collapsed"
-												},
-												"val": {
-													"type": 23,
-													"value": "False"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "logicalname"
-												},
-												"val": {
-													"type": 23,
-													"value": "Greeting"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "position"
-												},
-												"val": {
-													"type": 23,
-													"value": "15;-204"
-												}
-											},
-											{
-												"key": {
-													"type": 22,
-													"value": "sourcetemplate"
-												},
-												"val": {
-													"type": 23,
-													"value": ""
-												}
-											}
-										]
-									}
-								],
-								"setflags": [
-									{}
-								]
-							}
-						]
-					}
-				],
-				"speakerlist": [
-					{
-						"speaker": [
-							{
-								"index": {
-									"type": 22,
-									"value": "0"
-								},
-								"list": {
-									"type": 23,
-									"value": "69b61817-8458-47ac-8e78-5e855b0999ab"
-								}
-							},
-							{
-								"index": {
-									"type": 22,
-									"value": "1"
-								},
-								"list": {
-									"type": 23,
-									"value": "e0d1ff71-04a8-4340-ae64-9684d846eb83"
-								}
-							}
-						]
-					}
-				]
-			},
-			"editorData": {
-				"needLayout": {
-					"type": 19,
-					"value": false
-				},
-				"nextNodeId": {
-					"type": 5,
-					"value": 65
-				}
-			}
-		}
-	}
+   "save" : {
+      "header" : {
+         "version" : "2.0.8.2"
+      },
+      "regions" : {
+         "dialog" : {
+            "UUID" : {"type" : 22, "value" : "629b73ff-a002-494c-99e3-2aefe30474db"},
+            "automated" : {"type" : 19, "value" : 0},
+            "category" : {"type" : 23, "value" : "Generic NPC Dialog"},
+            "nodes" : [
+               {
+                  "RootNodes" : [
+                     {
+                        "RootNodes" : {"type" : 22, "value" : "eebe5553-fdb3-4310-a408-0e5c72edae63"}
+                     }
+                  ],
+                  "node" : [
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hae61b90ag1500g4b27g9f84g2dfd04fb2e60",
+                                                   "type" : 28,
+                                                   "value" : "*The dummy is ENHANCED!*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "61d52c3f-93d7-40f7-8802-47dd51bff796"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagAnswer"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N53"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Answer"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "655;-204"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [ {} ],
+                        "speaker" : {"type" : 4, "value" : 0},
+                        "stub" : {"type" : 19, "value" : 1},
+                        "transitionmode" : {"type" : 1, "value" : 2},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "h04c3e195g23a0g4095gbd44g12f0b90d8579",
+                                                   "type" : 28,
+                                                   "value" : "*Stop giving the dummy bonuses.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "2357d8b7-b35e-4f39-979c-9cb9a106302a"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [ {} ],
+                        "constructor" : {"type" : 22, "value" : "TagQuestion"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N47"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Question"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "335;672"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 1},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [ {} ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "61d52c3f-93d7-40f7-8802-47dd51bff796"},
+                        "children" : [ {} ],
+                        "constructor" : {"type" : 22, "value" : "Jump"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N55"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Jump"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "975;-204"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "jumptarget" : {"type" : 22, "value" : "eebe5553-fdb3-4310-a408-0e5c72edae63"},
+                        "jumptargetpoint" : {"type" : 1, "value" : 1},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hab13ee34g8d54g457bg95acgdf80bfa04e94",
+                                                   "type" : 28,
+                                                   "value" : "*Clear all bonus Physical Armor from the dummy.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "b8d5572d-373a-42d4-96da-1ec879aedece"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "de363c13-ec6b-4ccd-a929-3198d00e8d31"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagQuestion"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N60"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Question"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "335;234"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "LLDUMMY_Commands_ClearArmor"},
+                                          "paramval" : {"type" : 4, "value" : 0},
+                                          "value" : {"type" : 19, "value" : 1}
+                                       }
+                                    ],"type" : {"type" : 22, "value" : "Character"}}
+                              ]
+                           }
+                        ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "he169a4a2g0a17g4b1fga268g864e211b0087",
+                                                   "type" : 28,
+                                                   "value" : "*Clear all bonus Magic Armor from the dummy.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "c658ea07-93f6-4142-bad0-e652b407d347"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "de363c13-ec6b-4ccd-a929-3198d00e8d31"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagQuestion"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N65"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Question"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "335;453"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "LLDUMMY_Commands_ClearMagicArmor"},
+                                          "paramval" : {"type" : 4, "value" : 0},
+                                          "value" : {"type" : 19, "value" : 1}
+                                       }
+                                    ],"type" : {"type" : 22, "value" : "Character"}}
+                              ]
+                           }
+                        ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "h2529020dg5e78g4396gaaf8g66cd55b802d8",
+                                                   "type" : 28,
+                                                   "value" : "*Grant the dummy bonus Physical Armor.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "d83e0a93-4697-46ee-b9d7-4d4b9cfc32d1"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagQuestion"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N48"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Question"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "335;-204"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "LLDUMMY_Commands_AddArmor"},
+                                          "paramval" : {"type" : 4, "value" : 0},
+                                          "value" : {"type" : 19, "value" : 1}
+                                       }
+                                    ],"type" : {"type" : 22, "value" : "Character"}}
+                              ]
+                           }
+                        ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hefba222bg25e0g4e92g9fc1ga2b49f6b9efb",
+                                                   "type" : 28,
+                                                   "value" : "*The dummy's power is reduced...*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "de363c13-ec6b-4ccd-a929-3198d00e8d31"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "61d52c3f-93d7-40f7-8802-47dd51bff796"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagAnswer"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N61"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Answer"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "655;15"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [ {} ],
+                        "speaker" : {"type" : 4, "value" : 0},
+                        "stub" : {"type" : 19, "value" : 1},
+                        "transitionmode" : {"type" : 1, "value" : 2},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hf61e482egd713g4789gb174g92de4723bb4a",
+                                                   "type" : 28,
+                                                   "value" : "*Grant the dummy bonus Magic Armor.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "e9009482-33f7-411e-afcc-4ec6e6edc0eb"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "1e60ba7c-11e6-454f-b94e-20d11abe4e3b"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagQuestion"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N59"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Question"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "335;15"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "LLDUMMY_Commands_AddMagicArmor"},
+                                          "paramval" : {"type" : 4, "value" : 0},
+                                          "value" : {"type" : 19, "value" : 1}
+                                       }
+                                    ],"type" : {"type" : 22, "value" : "Character"}}
+                              ]
+                           }
+                        ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     },
+                     {
+                        "GameData" : [
+                           {
+                              "AiPersonalities" : [ {} ],
+                              "CameraTarget" : {"type" : 4, "value" : -1},
+                              "CustomMovie" : {"type" : 23, "value" : ""},
+                              "Emotion" : {"type" : 23, "value" : "Default"},
+                              "ExtraWaitTime" : {"type" : 4, "value" : 0},
+                              "MusicInstrumentSounds" : [ {} ],
+                              "OriginSound" : [ {} ],
+                              "SoundEvent" : {"type" : 23, "value" : ""}
+                           }
+                        ],
+                        "ShowOnce" : {"type" : 19, "value" : 0},
+                        "TaggedTexts" : [
+                           {
+                              "TaggedText" : [
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hf32d213eg931cg4922gb035ga0419ea3d29b",
+                                                   "type" : 28,
+                                                   "value" : "*You ponder over what bonuses to grant the dummy.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "h841f1362g88cag41c2g9611g60b2f865a69a",
+                                                   "type" : 28,
+                                                   "value" : "*The motionless dummy appears to be giving you the \"stink eye\".*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "hcc39c474g8d39g4108g8a8dg19ed45594dca",
+                                                   "type" : 28,
+                                                   "value" : "*The dummy awaits your command. Well, not really, but it <i>feels </i>like it could be.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "h2bd13dbbgfb7bg4160ga5b9g862b1ca12118",
+                                                   "type" : 28,
+                                                   "value" : "*The dummy gives you the \"cold shoulder\".*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "HasTagRule" : {"type" : 19, "value" : 1},
+                                    "RuleGroup" : [
+                                       {
+                                          "Rules" : [ {} ],
+                                          "TagCombineOp" : {"type" : 1, "value" : 0}
+                                       }
+                                    ],
+                                    "TagTexts" : [
+                                       {
+                                          "TagText" : [
+                                             {
+                                                "TagText" : {
+                                                   "handle" : "heedbbea7gedcag4316g88e6gd39a94678ed9",
+                                                   "type" : 28,
+                                                   "value" : "*The dummy gives you the silent treatment.*"
+                                                },
+                                                "stub" : {"type" : 19, "value" : 1}
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ],
+                        "Tags" : [ {} ],
+                        "UUID" : {"type" : 22, "value" : "eebe5553-fdb3-4310-a408-0e5c72edae63"},
+                        "addressedspeaker" : {"type" : 4, "value" : -1},
+                        "checkflags" : [ {} ],
+                        "children" : [
+                           {
+                              "child" : [
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "d83e0a93-4697-46ee-b9d7-4d4b9cfc32d1"}
+                                 },
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "e9009482-33f7-411e-afcc-4ec6e6edc0eb"}
+                                 },
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "b8d5572d-373a-42d4-96da-1ec879aedece"}
+                                 },
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "c658ea07-93f6-4142-bad0-e652b407d347"}
+                                 },
+                                 {
+                                    "UUID" : {"type" : 22, "value" : "2357d8b7-b35e-4f39-979c-9cb9a106302a"}
+                                 }
+                              ]
+                           }
+                        ],
+                        "constructor" : {"type" : 22, "value" : "TagGreeting"},
+                        "editorData" : [
+                           {
+                              "data" : [
+                                 {
+                                    "key" : {"type" : 22, "value" : "ID"},
+                                    "val" : {"type" : 23, "value" : "N1"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "NodeContext"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "collapsed"},
+                                    "val" : {"type" : 23, "value" : "False"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "logicalname"},
+                                    "val" : {"type" : 23, "value" : "Greeting"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "position"},
+                                    "val" : {"type" : 23, "value" : "15;-204"}
+                                 },
+                                 {
+                                    "key" : {"type" : 22, "value" : "sourcetemplate"},
+                                    "val" : {"type" : 23, "value" : ""}
+                                 }
+                              ]
+                           }
+                        ],
+                        "endnode" : {"type" : 19, "value" : 0},
+                        "exclusive" : {"type" : 19, "value" : 0},
+                        "optional" : {"type" : 19, "value" : 0},
+                        "setflags" : [ {} ],
+                        "speaker" : {"type" : 4, "value" : 1},
+                        "stub" : {"type" : 19, "value" : 0},
+                        "transitionmode" : {"type" : 1, "value" : 0},
+                        "waittime" : {"type" : 6, "value" : -1.0}
+                     }
+                  ]
+               }
+            ],
+            "speakerlist" : [
+               {
+                  "speaker" : [
+                     {
+                        "index" : {"type" : 22, "value" : "0"},
+                        "list" : {"type" : 23, "value" : "69b61817-8458-47ac-8e78-5e855b0999ab"}
+                     },
+                     {
+                        "index" : {"type" : 22, "value" : "1"},
+                        "list" : {"type" : 23, "value" : "e0d1ff71-04a8-4340-ae64-9684d846eb83"}
+                     }
+                  ]
+               }
+            ]
+         },
+         "editorData" : {
+            "needLayout" : {"type" : 19, "value" : 0},
+            "nextNodeId" : {"type" : 5, "value" : 66}
+         }
+      }
+   }
 }

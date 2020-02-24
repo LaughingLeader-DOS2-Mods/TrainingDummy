@@ -8,6 +8,8 @@
 	<content contentuid="hfdb07e3dged89g4481gb37eg32501348b99b" Source="LLDUMMY_MiscText.lsb" Key="LLDUMMY_TrainingDummy_OnDamageTaken">Training Dummy took [1] damage!</content>
 	<content contentuid="h72656d10g8028g4ee6g9004gca1b1b34aa10" Source="LLDUMMY_Skills.lsb" Key="Target_LLDUMMY_TrainingDummy_Description">Summon an unbreakable training dummy at the target location.&lt;br&gt;&lt;font color=&apos;#DD44FF&apos;&gt;The dummy can be interacted with to dismiss it or modify its configuration.&lt;/font&gt;&lt;br&gt;&lt;font color=&apos;#44FF44&apos;&gt;Use this skill on a hostile dummy to force dialog with it.&lt;/font&gt;</content>
 	<content contentuid="hcf1319f6gf64cg4ff9g9179g52888dc5782f" Source="LLDUMMY_Skills.lsb" Key="Target_LLDUMMY_TrainingDummy_DisplayName">&lt;font color=&apos;#DD4444&apos;&gt;Deploy Training Dummy&lt;/font&gt;</content>
+	<content contentuid="h583f1a06g0f6cg481dga043g6acd4123835c" Source="LLDUMMY_TrainingDummy_A">Private Dummy</content>
+	<content contentuid="h689ccad3g22f5g490dg9209g0b47ef584cfc" Source="LLDUMMY_TrainingDummy_B">Sergeant Dummy</content>
 	<content contentuid="hae61b90ag1500g4b27g9f84g2dfd04fb2e60" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy is ENHANCED!*</content>
 	<content contentuid="h04c3e195g23a0g4095gbd44g12f0b90d8579" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*Stop giving the dummy bonuses.*</content>
 	<content contentuid="hab13ee34g8d54g457bg95acgdf80bfa04e94" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*Clear all bonus Physical Armor from the dummy.*</content>
@@ -20,28 +22,33 @@
 	<content contentuid="hcc39c474g8d39g4108g8a8dg19ed45594dca" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy awaits your command. Well, not really, but it &lt;i&gt;feels &lt;/i&gt;like it could be.*</content>
 	<content contentuid="h2bd13dbbgfb7bg4160ga5b9g862b1ca12118" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy gives you the &quot;cold shoulder&quot;.*</content>
 	<content contentuid="heedbbea7gedcag4316g88e6gd39a94678ed9" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy gives you the silent treatment.*</content>
-	<content contentuid="h4966520cg16bcg45ebg9a34g927815d56fc5" Source="LLDUMMY_TrainingDummy_Main.lsj">*Take your leave.*</content>
-	<content contentuid="hae38a15cge7ceg4889gbb1ag16e40d37c664" Source="LLDUMMY_TrainingDummy_Main.lsj">*Increase the dummy&apos;s level.*</content>
-	<content contentuid="hd9c4e7a4geb3bg4dcfga91bg88075dd3c414" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as a neutral.*</content>
-	<content contentuid="h84b0125eg3c6eg496fg8792g91a6692c3ea7" Source="LLDUMMY_TrainingDummy_Main.lsj">*Decrease the dummy&apos;s level.*</content>
-	<content contentuid="h9a43ff8egf606g40a5g8a98g2696ed0e984f" Source="LLDUMMY_TrainingDummy_Main.lsj">Wait, noooo!</content>
-	<content contentuid="h1654f200g19e7g49ecg9768ge55d898b5d0f" Source="LLDUMMY_TrainingDummy_Main.lsj">Nooooo!</content>
-	<content contentuid="h3d951182gd246g4066gaafage53c12cc798c" Source="LLDUMMY_TrainingDummy_Main.lsj">Why?!</content>
-	<content contentuid="h92801640g860cg487bg9d79g11b0ab188c0c" Source="LLDUMMY_TrainingDummy_Main.lsj">B-but...!!!</content>
-	<content contentuid="h4388e306gdb4bg453dg84a1g79b51a7f7ba4" Source="LLDUMMY_TrainingDummy_Main.lsj">Argh!!!</content>
-	<content contentuid="h6ba6accfg96a9g4910g924cg9c88e7b0a620" Source="LLDUMMY_TrainingDummy_Main.lsj">&lt;b&gt;I&apos;ll have my revenge!&lt;/b&gt;</content>
-	<content contentuid="h89a1f682gb2d2g4cd5gb843gf0b2b24c7aab" Source="LLDUMMY_TrainingDummy_Main.lsj">&lt;i&gt;I&apos;ll remember this!&lt;/i&gt;</content>
-	<content contentuid="h6d2f14e7g7112g4378gb740gbda335597bb9" Source="LLDUMMY_TrainingDummy_Main.lsj">Nooooo!</content>
-	<content contentuid="hbdbba386g2182g404fga8a9g9badaf12be1b" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy idles by.*</content>
-	<content contentuid="hbd9328eag9142g49c9gae3ega76cb1329b2d" Source="LLDUMMY_TrainingDummy_Main.lsj">*Change your mind.*</content>
-	<content contentuid="hf623682egabc4g4eadgb314gab3b669428ed" Source="LLDUMMY_TrainingDummy_Main.lsj">*Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero&apos;s death.*</content>
-	<content contentuid="hbc9b3994gb245g4d53g96a8g5d41d891ff1c" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy sits, motionless. Truly an unwavering force.*&lt;br&gt;Level Modifier: [LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98]</content>
-	<content contentuid="h31aa7361gdd88g4520g8631gb338fa398bd4" Source="LLDUMMY_TrainingDummy_Main.lsj">*The motionless dummy appears to be giving you the &quot;stink eye&quot;.*</content>
-	<content contentuid="h1557a99bg778cg4d4eg8c69gf3cfb0b045fc" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy awaits your command. Well, not really, but it &lt;i&gt;feels &lt;/i&gt;like it could be.*</content>
-	<content contentuid="hb4f29450ga17ag4b42g9a46g596ac088284a" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy gives you the &quot;cold shoulder&quot;.*</content>
-	<content contentuid="h99176c32g3674g416eg89ebgfc2890d50969" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy gives you the silent treatment.*</content>
-	<content contentuid="hd28914d0g4ac1g4f6dgb41ag4736de107478" Source="LLDUMMY_TrainingDummy_Main.lsj">*Grant the dummy bonuses.*</content>
-	<content contentuid="h1999d903ga486g4f72g85a0geca4bfc7d7ed" Source="LLDUMMY_TrainingDummy_Main.lsj">*Change the dummy&apos;s alignment. Alliances are meant to be broken. Or forged.*</content>
-	<content contentuid="h583a8832g211ag4501g84cfgc3e8def672e2" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as a hostile.*</content>
-	<content contentuid="h7eb8a4f7g62efg4f20g83ccg0974b0e3e475" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as an ally.*</content>
+	<content contentuid="h86ec32aeg2730g43e0gb26cgf4b736c115ee" Source="LLDUMMY_TrainingDummy_G">Major Dummy</content>
+	<content contentuid="h1caa34b3gc1f8g4685g94ffg6622cb758fd7" Source="LLDUMMY_TrainingDummy_H">Double Dummy</content>
+	<content contentuid="h0907f3f4ga5edg4151gb820gb568bfb79aa6" Source="LLDUMMY_TrainingDummy_Main.lsj">*Take your leave.*</content>
+	<content contentuid="h5197260fg8e9eg41beg8c68g8de8c9053db9" Source="LLDUMMY_TrainingDummy_Main.lsj">*Increase the dummy&apos;s level.*</content>
+	<content contentuid="he7e082e4g1be9g4d52ga3deg98194ecc48da" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as a neutral.*</content>
+	<content contentuid="h3fa7b055g1903g44f7gbabdg6bd7c0a45913" Source="LLDUMMY_TrainingDummy_Main.lsj">*Decrease the dummy&apos;s level.*</content>
+	<content contentuid="ha79cae25g0368g4222gbf5fg4743b7e50c67" Source="LLDUMMY_TrainingDummy_Main.lsj">*Change your mind.*</content>
+	<content contentuid="hbfb0e2e7g564fg4950ga810g528fa8dc9a26" Source="LLDUMMY_TrainingDummy_Main.lsj">Wait, noooo!</content>
+	<content contentuid="haca8a109g4dddg4f2fgbcd5g190d6cb742b9" Source="LLDUMMY_TrainingDummy_Main.lsj">Nooooo!</content>
+	<content contentuid="hdc388540g03c3g4d91gb102g3a71f9beb26b" Source="LLDUMMY_TrainingDummy_Main.lsj">Why?!</content>
+	<content contentuid="h3e183251g2510g4ae7g9aa5g3e13139667f4" Source="LLDUMMY_TrainingDummy_Main.lsj">B-but...!!!</content>
+	<content contentuid="hf9f10cd4g7be9g429dg92e9g76663056fdb0" Source="LLDUMMY_TrainingDummy_Main.lsj">Argh!!!</content>
+	<content contentuid="h5505c133gce4dg479ag8b44g98e6fb93f9ae" Source="LLDUMMY_TrainingDummy_Main.lsj">&lt;b&gt;I&apos;ll have my revenge!&lt;/b&gt;</content>
+	<content contentuid="h7209ff90g124cg444dgb5f5g1986d162f01d" Source="LLDUMMY_TrainingDummy_Main.lsj">&lt;i&gt;I&apos;ll remember this!&lt;/i&gt;</content>
+	<content contentuid="h532f0ce0g7d8ag4d40gacc0g767999f3d2ec" Source="LLDUMMY_TrainingDummy_Main.lsj">Nooooo!</content>
+	<content contentuid="h0f00ebcag482eg4b4agb20dg046e15d9e83d" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy idles by.*</content>
+	<content contentuid="hb6e9cbb4g197bg49acg8c07geffb8af870a5" Source="LLDUMMY_TrainingDummy_Main.lsj">*Change your mind.*</content>
+	<content contentuid="he6354e6agfe73g45c3g861bg63cd4dbbfbd0" Source="LLDUMMY_TrainingDummy_Main.lsj">[DESTROY] *Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero&apos;s death.*</content>
+	<content contentuid="h57002239gfa8ag4fddgb8f7g1cdc2b6e8ee6" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy sits, motionless. Truly an unwavering force.*&lt;br&gt;Level Modifier: [LLDUMMY_TrainingDummyLevelModifier_6860e13e-47b9-4734-b9ae-d7305da99c98]</content>
+	<content contentuid="h9b59e903g6e95g4d7ag994fga213e60db934" Source="LLDUMMY_TrainingDummy_Main.lsj">*The motionless dummy appears to be giving you the &quot;stink eye&quot;.*</content>
+	<content contentuid="h814e4d22gd764g444bg87e2g9c46d2699610" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy awaits your command. Well, not really, but it &lt;i&gt;feels &lt;/i&gt;like it could be.*</content>
+	<content contentuid="hc717a8f4gf206g498fg9c23gc6b154b0a259" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy gives you the &quot;cold shoulder&quot;.*</content>
+	<content contentuid="hedd2163cgb5bag4127g9626g96baf28996cf" Source="LLDUMMY_TrainingDummy_Main.lsj">*The dummy gives you the silent treatment.*</content>
+	<content contentuid="he8847471ga516g4519gab56g9c736946d08f" Source="LLDUMMY_TrainingDummy_Main.lsj">*Grant the dummy bonuses.*</content>
+	<content contentuid="h735fa9c1g9a31g430agab48g6e21deaa6dec" Source="LLDUMMY_TrainingDummy_Main.lsj">*Change the dummy&apos;s alignment. Alliances are meant to be broken. Or forged.*</content>
+	<content contentuid="h69b19b89gdb53g43c5g9037g9ac474bbe0c7" Source="LLDUMMY_TrainingDummy_Main.lsj">*Destroy the dummy? This action cannot be reversed.*</content>
+	<content contentuid="h3a7a2ee7g0926g4f07g8e8cg57636a889ea2" Source="LLDUMMY_TrainingDummy_Main.lsj">*Yes. Wipe this dummy from existence.*</content>
+	<content contentuid="h1ec91211g59a0g42d0gbc6fgbf1d8b70cc0b" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as a hostile.*</content>
+	<content contentuid="hb8aeeff3g1167g4f5egbe5egf8f5dd2401e9" Source="LLDUMMY_TrainingDummy_Main.lsj">*Mark the dummy as an ally.*</content>
 </contentList>

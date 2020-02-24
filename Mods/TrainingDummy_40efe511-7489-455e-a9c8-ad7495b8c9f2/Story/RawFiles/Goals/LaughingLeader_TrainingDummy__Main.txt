@@ -163,6 +163,7 @@ AND
 TemporaryCharacterCreateAtPosition(_x, _y, _z, _Template, 0, _TrainingDummy)
 THEN
 NOT DB_LeaderLib_Array_Temp_RandomResult("LLDUMMY.TrainingDummyTemplates", _Index, _Template);
+PlayEffect(_TrainingDummy, "RS3_FX_GP_ScriptedEvent_Teleport_GenericSmoke_01");
 SetTag(_TrainingDummy, "LeaderLib_TemporaryCharacter");
 SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
 CharacterLookAt(_TrainingDummy, _Owner, 1);
@@ -336,6 +337,20 @@ AND
 NRD_CharacterGetStatInt(_TrainingDummy, "MaxMagicArmor", _Armor)
 THEN
 CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmorExtender", _Armor);
+
+IF
+CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+AND
+NRD_CharacterGetStatInt(_TrainingDummy, "MaxArmor", _Armor)
+THEN
+CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusArmorExtender", _Armor);
+
+IF
+CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+AND
+NRD_CharacterGetStatInt(_TrainingDummy, "MaxMagicArmor", _Armor)
+THEN
+CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmorExtender", _Armor);
 */
 
 IF
@@ -349,6 +364,13 @@ ObjectFlagSet("LLDUMMY_Commands_ClearMagicArmor", (CHARACTERGUID)_TrainingDummy,
 THEN
 ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_ClearMagicArmor", 0);
 RemoveStatus(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR");
+//END_REGION
+
+//REGION DEBUG_RESTART
+IF
+RegionEnded("_TMPL_Sandbox")
+THEN
+SysActivateGoal("LaughingLeader_TrainingDummy_AddSkills");
 //END_REGION
 EXITSECTION
 
