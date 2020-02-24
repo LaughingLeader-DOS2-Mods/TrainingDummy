@@ -1,2 +1,8 @@
 Key	Content
 LLDUMMY_TrainingDummy_OnDamageTaken	Training Dummy took [1] damage!
+LLDUMMY_StatusText_BonusArmor	<font color='#33FF22' size='24'>Bonus Armor</font>
+LLDUMMY_StatusText_BonusArmorExtender	<font color='#CCCCCC' size='24'>Bonus Physical Armor (<font color='#00FF00' size='28'>[1]</font><font color='#CCCCCC' size='24'>)</font>
+LLDUMMY_StatusText_BonusMagicArmor	<font color='#33DDFF' size='24'>Bonus Magic Armor</font>
+LLDUMMY_StatusText_BonusMagicArmorExtender	<font color='#33DDFF' size='24'>Bonus Magic Armor (<font color='#00FF00' size='28'>[1]</font><font color='#33DDFF' size='24'>)</font>
+LLDUMMY_StatusText_BonusArmorRemoved	<font color='#33FF22' size='24'>Bonus Armor Removed</font>
+LLDUMMY_StatusText_BonusMagicArmorRemoved	<font color='#33DDFF' size='24'>Bonus Magic Armor Removed</font>

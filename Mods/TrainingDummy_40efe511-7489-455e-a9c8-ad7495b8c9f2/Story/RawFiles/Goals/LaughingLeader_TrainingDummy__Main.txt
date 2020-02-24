@@ -3,6 +3,7 @@ SubGoalCombiner SGC_AND
 INITSECTION
 LLDUMMY_InitSettings();
 KBSECTION
+//REGION SETTINGS
 PROC
 LLDUMMY_InitSettings()
 THEN
@@ -10,17 +11,14 @@ LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDu
 LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_B_63cc1423-69ee-4ad2-b730-bf1b118e017f");
 LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_G_d63d27a9-6468-4c25-81a6-860a39fd49ac");
 LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDummy_H_13a23458-aee2-42d5-9994-599a9557c54a");
+//END_REGION
 
-IF
-StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnDamageTaken")
-THEN
-CharacterSetHitpointsPercentage(_TrainingDummy, 100.0);
-
+//REGION DUMMY_INIT
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
 THEN
 DB_DoNotFace(_TrainingDummy);
-DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummySettings");
+DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummy_Main");
 ProcCharacterDisableAllCrimes(_TrainingDummy);
 
 IF
@@ -40,7 +38,9 @@ THEN
 SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
 CharacterLookAt(_TrainingDummy, _Owner, 1);
 LLDUMMY_LevelUpTrainingDummy(_TrainingDummy);
+//END_REGION
 
+//REGION LEVEL_UP
 PROC
 LLDUMMY_LevelUpTrainingDummy((CHARACTERGUID)_TrainingDummy)
 AND
@@ -93,11 +93,12 @@ GetTemplate(_TrainingDummy, _Template)
 THEN
 Transform(_TrainingDummy, _Template, 0, 0, 1);
 CharacterLevelUpTo(_TrainingDummy, _Next);
+//END_REGION
 
 //REGION DIALOG_VAR
 /*
 IF
-DialogStarted("LLDUMMY_TrainingDummySettings", _Instance)
+DialogStarted("LLDUMMY_TrainingDummy_Main", _Instance)
 AND
 DialogGetInvolvedPlayer(_Instance, 1, _Player)
 AND
@@ -107,7 +108,7 @@ DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248
 */
 
 IF
-DialogStarted("LLDUMMY_TrainingDummySettings", _Instance)
+DialogStarted("LLDUMMY_TrainingDummy_Main", _Instance)
 AND
 DialogGetInvolvedNPC(_Instance, 1, _TrainingDummy)
 AND
@@ -118,7 +119,7 @@ DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TrainingDummyLevelModifier_6
 PROC
 LLDUMMY_UpdateDialogVars((GUIDSTRING)_Owner, (GUIDSTRING)_TrainingDummy, (INTEGER)_TargetLevel)
 AND
-DB_DialogName("LLDUMMY_TrainingDummySettings", _Instance)
+DB_DialogName("LLDUMMY_TrainingDummy_Main", _Instance)
 AND
 DB_DialogPlayers(_Instance, _Owner, _)
 AND
@@ -129,6 +130,7 @@ DialogSetVariableIntForInstance(_Instance, "LLDUMMY_TrainingDummyLevelModifier_6
 //DialogSetVariableIntForInstance(_Instance, "LLDUMMY_GlobalLevelModifier_7b51c248-efa0-4385-853a-ca885f36f2c0", _TargetLevel);
 //END_REGION
 
+//REGION TRAINING_DUMMY_SKILL
 IF
 CharacterUsedSkillOnTarget(_Player, _Target, "Target_LLDUMMY_TrainingDummy", _, _)
 AND
@@ -165,20 +167,7 @@ SetTag(_TrainingDummy, "LeaderLib_TemporaryCharacter");
 SetVarObject(_TrainingDummy, "LLDUMMY_Owner", _Owner);
 CharacterLookAt(_TrainingDummy, _Owner, 1);
 LLDUMMY_LevelUpTrainingDummy(_TrainingDummy);
-
-IF
-StoryEvent((CHARACTERGUID)_Character, "LLDUMMY_TrainingDummy_OnDamageTaken")
-AND
-GetVarFloat(_Character, "LLDUMMY_TrainingDummy_OnDamageTaken.Percentage", _DamagePercentage)
-THEN
-DB_NOOP(1);
-
-IF
-CharacterCharacterEvent(_TrainingDummy, _Attacker, "LLDUMMY_SetAttackerName")
-AND
-CharacterGetDisplayName(_Attacker, _, _Name)
-THEN
-SetVarString(_TrainingDummy, "LLDUMMY_AttackerName", _Name);
+//END_REGION
 
 //REGION HOSTILE_CHATTING
 IF
@@ -196,9 +185,9 @@ AND
 ObjectExists(_Target, 1)
 THEN
 NOT DB_LLDUMMY_Temp_TalkAfterSkillCast(_Player, _Target);
-//ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TrainingDummySettings", 0, "", 1, 30.0);
+//ProcCharacterMoveToAndTalk(_Player, _Target, "LLDUMMY_TrainingDummy_Main", 0, "", 1, 30.0);
 //TeleportTo(_Player, _Target, "", 0, 1);
-Proc_StartDialog(0, "LLDUMMY_TrainingDummySettings", _Target, _Player);
+Proc_StartDialog(0, "LLDUMMY_TrainingDummy_Main", _Target, _Player);
 
 IF
 SkillCast(_Player, "Target_LLDUMMY_TrainingDummy", _, _)
@@ -215,7 +204,7 @@ THEN
 CharacterDieImmediate(_TrainingDummy, 0, "LifeTime", _TrainingDummy);
 
 IF
-DialogEnded("LLDUMMY_TrainingDummySettings", _Instance)
+DialogEnded("LLDUMMY_TrainingDummy_Main", _Instance)
 AND
 DialogGetInvolvedNPC(_Instance, 1, _TrainingDummy)
 AND
@@ -234,7 +223,7 @@ IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
 THEN
 NOT DB_DoNotFace(_TrainingDummy);
-NOT DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummySettings");
+NOT DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummy_Main");
 //END_REGION
 
 //REGION ALIGNMENT
@@ -276,6 +265,91 @@ ObjectClearFlag(_Player, "LLDUMMY_Commands_RemoveSkill", 0);
 CharacterRemoveSkill(_Player, "Target_LLDUMMY_TrainingDummy");
 //END_REGION
 
+//REGION DAMAGE_TAKEN
+// [BEGIN_NO_OSITOOLS]
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnDamageTaken")
+THEN
+CharacterSetHitpointsPercentage(_TrainingDummy, 100.0);
+// [END_NO_OSITOOLS]
+
+/* [OSITOOLS_ONLY]
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnDamageTaken")
+AND
+NRD_CharacterGetStatInt(_TrainingDummy, "MaxVitality", _MaxVit)
+THEN
+NRD_CharacterSetStatInt(_TrainingDummy, "CurrentVitality", _MaxVit);
+*/
+
+IF
+StoryEvent((CHARACTERGUID)_Character, "LLDUMMY_TrainingDummy_OnDamageTaken")
+AND
+GetVarFloat(_Character, "LLDUMMY_TrainingDummy_OnDamageTaken.Percentage", _DamagePercentage)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterCharacterEvent(_TrainingDummy, _Attacker, "LLDUMMY_SetAttackerName")
+AND
+CharacterGetDisplayName(_Attacker, _, _Name)
+THEN
+SetVarString(_TrainingDummy, "LLDUMMY_AttackerName", _Name);
+//END_REGION
+
+//REGION ARMOR_INCREASE
+IF
+ObjectFlagSet("LLDUMMY_Commands_AddArmor", (CHARACTERGUID)_TrainingDummy, _)
+THEN
+ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_AddArmor", 0);
+ApplyStatus(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", -1.0, 0, _TrainingDummy);
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_AddMagicArmor", (CHARACTERGUID)_TrainingDummy, _)
+THEN
+ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_AddMagicArmor", 0);
+ApplyStatus(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", -1.0, 0, _TrainingDummy);
+
+// [BEGIN_NO_OSITOOLS]
+IF
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+THEN
+CharacterStatusText(_TrainingDummy, "LLDUMMY_StatusText_BonusArmor");
+
+IF
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+THEN
+CharacterStatusText(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmor");
+// [END_NO_OSITOOLS]
+
+/* [OSITOOLS_ONLY]
+IF
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+AND
+NRD_CharacterGetStatInt(_TrainingDummy, "MaxArmor", _Armor)
+THEN
+CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusArmorExtender", _Armor);
+
+IF
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+AND
+NRD_CharacterGetStatInt(_TrainingDummy, "MaxMagicArmor", _Armor)
+THEN
+CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmorExtender", _Armor);
+*/
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_ClearArmor", (CHARACTERGUID)_TrainingDummy, _)
+THEN
+ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_ClearArmor", 0);
+RemoveStatus(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR");
+
+IF
+ObjectFlagSet("LLDUMMY_Commands_ClearMagicArmor", (CHARACTERGUID)_TrainingDummy, _)
+THEN
+ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_ClearMagicArmor", 0);
+RemoveStatus(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR");
+//END_REGION
 EXITSECTION
 
 ENDEXITSECTION
