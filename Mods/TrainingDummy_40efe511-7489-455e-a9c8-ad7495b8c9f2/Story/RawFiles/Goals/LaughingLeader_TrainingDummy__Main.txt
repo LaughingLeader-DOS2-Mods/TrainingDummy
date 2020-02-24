@@ -303,50 +303,50 @@ IF
 ObjectFlagSet("LLDUMMY_Commands_AddArmor", (CHARACTERGUID)_TrainingDummy, _)
 THEN
 ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_AddArmor", 0);
-ApplyStatus(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", -1.0, 0, _TrainingDummy);
+ApplyStatus(_TrainingDummy, "LLDUMMY_BONUS_ARMOR", -1.0, 0, _TrainingDummy);
 
 IF
 ObjectFlagSet("LLDUMMY_Commands_AddMagicArmor", (CHARACTERGUID)_TrainingDummy, _)
 THEN
 ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_AddMagicArmor", 0);
-ApplyStatus(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", -1.0, 0, _TrainingDummy);
+ApplyStatus(_TrainingDummy, "LLDUMMY_BONUS_MAGICARMOR", -1.0, 0, _TrainingDummy);
 
 // [BEGIN_NO_OSITOOLS]
 IF
-CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_BONUS_ARMOR", _)
 THEN
 CharacterStatusText(_TrainingDummy, "LLDUMMY_StatusText_BonusArmor");
 
 IF
-CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_BONUS_MAGICARMOR", _)
 THEN
 CharacterStatusText(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmor");
 // [END_NO_OSITOOLS]
 
 /* [OSITOOLS_ONLY]
 IF
-CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_BONUS_ARMOR", _)
 AND
 NRD_CharacterGetStatInt(_TrainingDummy, "MaxArmor", _Armor)
 THEN
 CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusArmorExtender", _Armor);
 
 IF
-CharacterStatusApplied(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+CharacterStatusApplied(_TrainingDummy, "LLDUMMY_BONUS_MAGICARMOR", _)
 AND
 NRD_CharacterGetStatInt(_TrainingDummy, "MaxMagicArmor", _Armor)
 THEN
 CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusMagicArmorExtender", _Armor);
 
 IF
-CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR", _)
+CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_BONUS_ARMOR", _)
 AND
 NRD_CharacterGetStatInt(_TrainingDummy, "MaxArmor", _Armor)
 THEN
 CharacterDisplayTextWithParam(_TrainingDummy, "LLDUMMY_StatusText_BonusArmorExtender", _Armor);
 
 IF
-CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR", _)
+CharacterStatusRemoved(_TrainingDummy, "LLDUMMY_BONUS_MAGICARMOR", _)
 AND
 NRD_CharacterGetStatInt(_TrainingDummy, "MaxMagicArmor", _Armor)
 THEN
@@ -357,13 +357,13 @@ IF
 ObjectFlagSet("LLDUMMY_Commands_ClearArmor", (CHARACTERGUID)_TrainingDummy, _)
 THEN
 ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_ClearArmor", 0);
-RemoveStatus(_TrainingDummy, "LLDUMMY_EXTRA_ARMOR");
+RemoveStatus(_TrainingDummy, "LLDUMMY_BONUS_ARMOR");
 
 IF
 ObjectFlagSet("LLDUMMY_Commands_ClearMagicArmor", (CHARACTERGUID)_TrainingDummy, _)
 THEN
 ObjectClearFlag(_TrainingDummy, "LLDUMMY_Commands_ClearMagicArmor", 0);
-RemoveStatus(_TrainingDummy, "LLDUMMY_EXTRA_MAGICARMOR");
+RemoveStatus(_TrainingDummy, "LLDUMMY_BONUS_MAGICARMOR");
 //END_REGION
 
 //REGION DEBUG_RESTART

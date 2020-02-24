@@ -8,6 +8,8 @@
 	<content contentuid="hfdb07e3dged89g4481gb37eg32501348b99b" Source="LLDUMMY_MiscText.lsb" Key="LLDUMMY_TrainingDummy_OnDamageTaken">Training Dummy took [1] damage!</content>
 	<content contentuid="h72656d10g8028g4ee6g9004gca1b1b34aa10" Source="LLDUMMY_Skills.lsb" Key="Target_LLDUMMY_TrainingDummy_Description">Summon an unbreakable training dummy at the target location.&lt;br&gt;&lt;font color=&apos;#DD44FF&apos;&gt;The dummy can be interacted with to dismiss it or modify its configuration.&lt;/font&gt;&lt;br&gt;&lt;font color=&apos;#44FF44&apos;&gt;Use this skill on a hostile dummy to force dialog with it.&lt;/font&gt;</content>
 	<content contentuid="hcf1319f6gf64cg4ff9g9179g52888dc5782f" Source="LLDUMMY_Skills.lsb" Key="Target_LLDUMMY_TrainingDummy_DisplayName">&lt;font color=&apos;#DD4444&apos;&gt;Deploy Training Dummy&lt;/font&gt;</content>
+	<content contentuid="h703bcadege75bg49beg9589g87c7fca03940" Source="LLDUMMY_Statuses.lsb" Key="Stats_LLDUMMY_BonusArmor">Bonus Physical Armor</content>
+	<content contentuid="hc97956f5gb6dfg4bf8ga558g38305d71cfc5" Source="LLDUMMY_Statuses.lsb" Key="Stats_LLDUMMY_BonusMagicArmor">Bonus Magical Armor</content>
 	<content contentuid="h583f1a06g0f6cg481dga043g6acd4123835c" Source="LLDUMMY_TrainingDummy_A">Private Dummy</content>
 	<content contentuid="h689ccad3g22f5g490dg9209g0b47ef584cfc" Source="LLDUMMY_TrainingDummy_B">Sergeant Dummy</content>
 	<content contentuid="hae61b90ag1500g4b27g9f84g2dfd04fb2e60" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy is ENHANCED!*</content>
