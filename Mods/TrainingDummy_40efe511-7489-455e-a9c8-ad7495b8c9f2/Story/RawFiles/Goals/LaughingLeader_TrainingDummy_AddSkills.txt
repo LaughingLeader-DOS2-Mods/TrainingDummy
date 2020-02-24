@@ -6,9 +6,11 @@ KBSECTION
 
 //REGION ADD_SKILL
 IF
-GameStarted(_Region, _)
+GameStarted(_Region, _IsEditorMode)
 AND
-IsGameLevel(_Region, 1)
+IsGameLevel(_Region, _IsGameLevel)
+AND
+IntegerMax(_IsEditorMode, _IsGameLevel, 1)
 AND
 DB_Origins(_Char)
 AND
@@ -17,9 +19,11 @@ THEN
 CharacterAddSkill(_Char, "Target_LLDUMMY_TrainingDummy", 0);
 
 IF
-GameStarted(_Region, _)
+GameStarted(_Region, _IsEditorMode)
 AND
-IsGameLevel(_Region, 1)
+IsGameLevel(_Region, _IsGameLevel)
+AND
+IntegerMax(_IsEditorMode, _IsGameLevel, 1)
 THEN
 IterateParties("Iterator_LLDUMMY_AddSkill");
 TimerCancel("Timers_LLDUMMY_StopInitializationGoal");
