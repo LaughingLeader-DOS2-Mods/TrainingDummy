@@ -142,6 +142,8 @@ DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
 
 IF
 CharacterUsedSkillAtPosition(_Player, _x, _y, _z, "Target_LLDUMMY_TrainingDummy", _, _)
+AND
+NOT DB_LLDUMMY_Temp_SummonPosition(_Player, _, _, _)
 THEN
 DB_LLDUMMY_Temp_SummonPosition(_Player, _x, _y, _z);
 
