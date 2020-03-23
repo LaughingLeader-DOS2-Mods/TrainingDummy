@@ -5,7 +5,7 @@ data "ForGameMaster" "No"
 data "InitiateCombat" "No"
 data "StatsId" "Stats_LLDUMMY_BonusArmor"
 
-new entry "Stats_LLDUMMY_BONUSArmor"
+new entry "Stats_LLDUMMY_BonusArmor"
 type "Potion"
 data "Act" "1"
 data "Act part" "0"
