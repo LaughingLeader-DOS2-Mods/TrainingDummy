@@ -11,6 +11,7 @@
 	<content contentuid="h703bcadege75bg49beg9589g87c7fca03940" Source="LLDUMMY_Statuses.lsb" Key="Stats_LLDUMMY_BonusArmor">Bonus Physical Armor</content>
 	<content contentuid="hc97956f5gb6dfg4bf8ga558g38305d71cfc5" Source="LLDUMMY_Statuses.lsb" Key="Stats_LLDUMMY_BonusMagicArmor">Bonus Magical Armor</content>
 	<content contentuid="h583f1a06g0f6cg481dga043g6acd4123835c" Source="LLDUMMY_TrainingDummy_A">Private Dummy</content>
+	<content contentuid="h6409d971g7ef2g4174gb2e0g355e9f59615d" Source="LLDUMMY_TrainingDummy_A">Training Dummies</content>
 	<content contentuid="h689ccad3g22f5g490dg9209g0b47ef584cfc" Source="LLDUMMY_TrainingDummy_B">Sergeant Dummy</content>
 	<content contentuid="hae61b90ag1500g4b27g9f84g2dfd04fb2e60" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*The dummy is ENHANCED!*</content>
 	<content contentuid="h04c3e195g23a0g4095gbd44g12f0b90d8579" Source="LLDUMMY_TrainingDummy_Bonuses.lsj">*Stop giving the dummy bonuses.*</content>
