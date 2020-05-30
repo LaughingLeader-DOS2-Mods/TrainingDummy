@@ -17,6 +17,8 @@ LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDu
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
 THEN
+DB_BlockThreatenedDialog(_TrainingDummy);
+CharacterDisableCrime(_TrainingDummy,"WeaponsDrawn");
 DB_DoNotFace(_TrainingDummy);
 DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummy_Main");
 ProcCharacterDisableAllCrimes(_TrainingDummy);
@@ -225,6 +227,7 @@ RemoveTemporaryCharacter(_TrainingDummy);
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
 THEN
+NOT DB_BlockThreatenedDialog(_TrainingDummy);
 NOT DB_DoNotFace(_TrainingDummy);
 NOT DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummy_Main");
 //END_REGION
