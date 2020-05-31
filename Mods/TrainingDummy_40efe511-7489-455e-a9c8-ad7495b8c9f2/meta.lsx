@@ -12,7 +12,7 @@
                             <attribute id="MD5" value="" type="23" />
                             <attribute id="Name" value="LeaderLib - Definitive Edition" type="22" />
                             <attribute id="UUID" value="7e737d2f-31d2-4751-963f-be6ccc59cd0c" type="22" />
-                            <attribute id="Version" value="369426432" type="4" />
+                            <attribute id="Version" value="369885184" type="4" />
                         </node>
                     </children>
                 </node>
@@ -34,7 +34,7 @@
                     <attribute id="Tags" value="" type="30" />
                     <attribute id="Type" value="Add-on" type="22" />
                     <attribute id="UUID" value="40efe511-7489-455e-a9c8-ad7495b8c9f2" type="22" />
-                    <attribute id="Version" value="268435456" type="4" />
+                    <attribute id="Version" value="268435457" type="4" />
                     <children>
                         <node id="PublishVersion">
                             <attribute id="Version" value="909321303" type="4" />
