@@ -17,8 +17,9 @@ LeaderLib_Array_AddToArray("LLDUMMY.TrainingDummyTemplates", "LLDUMMY_TrainingDu
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_OnInit")
 THEN
-CharacterDisableCrime(_TrainingDummy,"WeaponsDrawn");
+ProcCharacterDisableCrime(_TrainingDummy,"WeaponsDrawn");
 ProcCharacterDisableAllCrimes(_TrainingDummy);
+DB_BlockThreatenedDialog(_TrainingDummy);
 DB_DontCreateMurder(_TrainingDummy);
 DB_NoLowAttitudeDialog(_TrainingDummy);
 DB_IgnoreAssault(_TrainingDummy);
@@ -229,11 +230,22 @@ RemoveTemporaryCharacter(_TrainingDummy);
 IF
 StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
 THEN
+NOT DB_CheckWeaponsDrawnCrime(_TrainingDummy);
+NOT DB_BlockThreatenedDialog(_TrainingDummy);
 NOT DB_DontCreateMurder(_TrainingDummy);
 NOT DB_NoLowAttitudeDialog(_TrainingDummy);
 NOT DB_IgnoreAssault(_TrainingDummy);
 NOT DB_DoNotFace(_TrainingDummy);
 NOT DB_Dialogs(_TrainingDummy, "LLDUMMY_TrainingDummy_Main");
+ProcRemoveAllDialogEntriesForSpeaker(_TrainingDummy);
+
+IF
+StoryEvent((CHARACTERGUID)_TrainingDummy, "LLDUMMY_TrainingDummy_DieNow")
+AND
+DB_CharacterCrimeDisabled(_TrainingDummy, _Crime)
+THEN
+NOT DB_CharacterCrimeDisabled(_TrainingDummy, _Crime);
+
 //END_REGION
 
 //REGION ALIGNMENT
