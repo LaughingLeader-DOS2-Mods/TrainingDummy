@@ -60,57 +60,10 @@ ENDIF
 	
 EVENT LLDUMMY_TrainingDummy_OnDamageTaken
 VARS
-	DAMAGE:_DamageType
-	FLOAT:_Percentage
-	CHARACTER:_Character
-	ITEM:_Item
-	STRING:_Str
-	STRING:_StrSubbed
-	FIXEDSTRING:_Message
-	FLOAT:_Vit
-	INT:_Damage
-	STRING:_Name
 ON
-	OnDamage(_DamageType, _Percentage, _Character, _Item)
+	OnDamage(_,_,_,_)
 ACTIONS
-	IF "!c1"
-		IsEqual(_Character, CHARACTER:null)
-	THEN
-		CharacterCharacterEvent(__Me, _Character, "LLDUMMY_SetAttackerName")
-	ENDIF
-	IF "c1"
-		CharacterGetStat(_Vit, __Me, VitalityMax)
-	THEN
-		Multiply(_Percentage, _Vit)
-		Cast(_Damage, _Percentage)
-	ENDIF
-	//SetHealth(__Me, 1.0)
-	IF "!c1"
-		IsEqual(_Character, CHARACTER:null)
-	THEN
-		IF "c1"
-			GetVar(_Name, __Me, "LLDUMMY_AttackerName")
-		THEN
-			Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Name)
-		ELSE
-			Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Character)
-		ENDIF
-	ELIF "!c1"
-		IsEqual(_Item, ITEM:null)
-	THEN
-		Print(_Str, "Took [1] [2] Damage from [3]!", _Damage, _DamageType, _Item)
-	ENDIF
-	IF "c1&!c2"
-		StringSub(_Str, 0, 255, _StrSubbed) // Safety
-		IsEqual(_StrSubbed, "")
-	THEN
-		Set(_Str, _StrSubbed)
-	ENDIF
-	Cast(_Message, _Str)
-	DisplayCombatInfoText(__Me, _Message, 0.0)
-	DisplayText(__Me, "", 0.0)
 	CharacterEvent(__Me, "LLDUMMY_TrainingDummy_OnDamageTaken")
-	//CombatLogText(__Me, "LLDUMMY_TrainingDummy_OnDamageTaken", 0, 0)	
 
 EVENT LLDUMMY_TrainingDummy_Dismiss
 ON

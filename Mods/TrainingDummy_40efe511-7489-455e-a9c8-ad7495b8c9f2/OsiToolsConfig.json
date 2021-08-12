@@ -1,7 +1,9 @@
 {
     "RequiredExtensionVersion": 54,
+    "ModTable": "LLTrainingDummy",
     "FeatureFlags": [
         "OsirisExtensions",
-        "Preprocessor"
+        "Preprocessor",
+        "Lua"
     ]
 }

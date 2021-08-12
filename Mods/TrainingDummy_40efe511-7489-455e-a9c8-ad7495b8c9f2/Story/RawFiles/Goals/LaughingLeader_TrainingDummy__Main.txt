@@ -303,20 +303,6 @@ NRD_CharacterGetStatInt(_TrainingDummy, "MaxVitality", _MaxVit)
 THEN
 NRD_CharacterSetStatInt(_TrainingDummy, "CurrentVitality", _MaxVit);
 */
-
-IF
-StoryEvent((CHARACTERGUID)_Character, "LLDUMMY_TrainingDummy_OnDamageTaken")
-AND
-GetVarFloat(_Character, "LLDUMMY_TrainingDummy_OnDamageTaken.Percentage", _DamagePercentage)
-THEN
-DB_NOOP(1);
-
-IF
-CharacterCharacterEvent(_TrainingDummy, _Attacker, "LLDUMMY_SetAttackerName")
-AND
-CharacterGetDisplayName(_Attacker, _, _Name)
-THEN
-SetVarString(_TrainingDummy, "LLDUMMY_AttackerName", _Name);
 //END_REGION
 
 //REGION ARMOR_INCREASE
