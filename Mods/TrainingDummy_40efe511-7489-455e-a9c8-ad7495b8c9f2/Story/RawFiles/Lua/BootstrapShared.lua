@@ -1,1 +1,1 @@
-Mods.LeaderLib.ImportUnsafe(Mods.LLTrainingDummy)
+Mods.LeaderLib.Import(Mods.LLTrainingDummy)
