@@ -17,10 +17,12 @@ local text = {
 Ext.RegisterListener("BeforeCharacterApplyDamage", function(target, attacker, hit, causeType, impactDirection, context)
     if target:HasTag("LLDUMMY_TrainingDummy") then
 		local displayName = ""
-		if getmetatable(attacker) == "CDivinityStats_Character" then
-			displayName = attacker.Character.DisplayName
-		else
-			displayName = attacker.Name
+		if attacker then
+			if getmetatable(attacker) == "CDivinityStats_Character" then
+				displayName = attacker.Character.DisplayName
+			else
+				displayName = attacker.Name
+			end
 		end
 		local damageList = Ext.NewDamageList()
 		for k,v in pairs(hit.DamageList:ToTable()) do
