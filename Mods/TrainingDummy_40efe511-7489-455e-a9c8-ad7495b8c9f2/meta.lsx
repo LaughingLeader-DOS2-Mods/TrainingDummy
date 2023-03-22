@@ -20,15 +20,15 @@
                     <attribute id="Author" value="LaughingLeader" type="30" />
                     <attribute id="CharacterCreationLevelName" value="" type="22" />
                     <attribute id="Description" value="Adds a skill to summon training dummies - Indestructible targets you can use to test skills and attacks on." type="30" />
-                    <attribute id="DescriptionName" value="" handle="ls::TranslatedStringRepository::s_HandleUnknown" type="28" />
-                    <attribute id="DisplayName" value="" handle="ls::TranslatedStringRepository::s_HandleUnknown" type="28" />
+                    <attribute id="DescriptionName" value="Adds a skill to summon training dummies - Indestructible targets you can use to test skills and attacks on." handle="h54b7b7acgfdeeg425egabf4gdfa9e3c9034a" type="28" />
+                    <attribute id="DisplayName" value="Training Dummy" handle="hd7ef5e1dg12a8g4f83ga9b4g7f9f497f7bfe" type="28" />
                     <attribute id="Folder" value="TrainingDummy_40efe511-7489-455e-a9c8-ad7495b8c9f2" type="30" />
                     <attribute id="GMTemplate" value="" type="22" />
                     <attribute id="LobbyLevelName" value="" type="22" />
                     <attribute id="MD5" value="" type="23" />
                     <attribute id="MenuLevelName" value="" type="22" />
                     <attribute id="Name" value="Training Dummy" type="22" />
-                    <attribute id="NumPlayers" value="2" type="1" />
+                    <attribute id="NumPlayers" value="4" type="1" />
                     <attribute id="PhotoBooth" value="LLDUMMY_Portrait_A" type="22" />
                     <attribute id="StartupLevelName" value="" type="22" />
                     <attribute id="Tags" value="" type="30" />
@@ -47,6 +47,9 @@
                                 </node>
                                 <node id="Target">
                                     <attribute id="Object" value="GM" type="22" />
+                                </node>
+                                <node id="Target">
+                                    <attribute id="Object" value="Arena" type="22" />
                                 </node>
                             </children>
                         </node>

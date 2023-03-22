@@ -7,3 +7,5 @@ LLDUMMY_StatusText_BonusMagicArmorExtender	<font color='#33DDFF' size='24'>Bonus
 LLDUMMY_StatusText_BonusMagicArmorRemoved	<font color='#33DDFF' size='24'>Bonus Magic Armor Removed</font>	hd69b7366g2d7dg40f8ga7a0gbb227b6cb00e
 LLDUMMY_TrainingDummy_OnDamageTaken	Training Dummy took [1] damage!	hfdb07e3dged89g4481gb37eg32501348b99b
 LLDUMMY_CombatLog_TookDamage	[[1]] [2] from [3] ([4])	h098a5013gc693g4743g8206gc4a659f7a145
+LLDUMMY_DisplayName	Training Dummy	hd7ef5e1dg12a8g4f83ga9b4g7f9f497f7bfe
+LLDUMMY_Description	Adds a skill to summon training dummies - Indestructible targets you can use to test skills and attacks on.	h54b7b7acgfdeeg425egabf4gdfa9e3c9034a
