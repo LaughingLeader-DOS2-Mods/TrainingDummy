@@ -25,9 +25,9 @@ IsGameLevel(_Region, _IsGameLevel)
 AND
 IntegerMax(_IsEditorMode, _IsGameLevel, 1)
 THEN
-IterateParties("Iterator_LLDUMMY_AddSkill");
+IterateParties("LLDUMMY_Commands_AddSkill");
 TimerCancel("Timers_LLDUMMY_StopInitializationGoal");
-TimerLaunch("Timers_LLDUMMY_StopInitializationGoal", 500);
+TimerLaunch("Timers_LLDUMMY_StopInitializationGoal", 3000);
 
 IF
 StoryEvent((CHARACTERGUID)_Player, "LLDUMMY_Commands_AddSkill")
