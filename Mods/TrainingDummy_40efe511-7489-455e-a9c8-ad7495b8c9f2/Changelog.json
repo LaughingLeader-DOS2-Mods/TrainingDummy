@@ -1,0 +1,16 @@
+{
+	"DisplayName": "[Key:LLDUMMY_DisplayName:Training Dummy]",
+	"Description": "[Key:LLDUMMY_Description:Adds a skill to summon training dummies - Indestructible targets you can use to test skills and attacks on..]",
+	"Entries": [
+		{
+			"Text": "See the full changelog in the 'Change Notes' tab on the Steam Workshop page."
+		},
+		{
+			"Version": "1.0.1.3",
+			"Changes": [
+				"Fixed a typo that prevented the '[Key:Target_LLDUMMY_TrainingDummy_DisplayName]' skill from being added to custom characters.",
+				"Reworked how damage is reported to the damage log. Now damage is aggregated and should contain more information."
+			]
+		}
+	]
+}
