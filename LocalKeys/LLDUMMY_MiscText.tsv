@@ -6,4 +6,4 @@ LLDUMMY_StatusText_BonusMagicArmor	<font color='#33DDFF' size='24'>Bonus Magic A
 LLDUMMY_StatusText_BonusMagicArmorExtender	<font color='#33DDFF' size='24'>Bonus Magic Armor (<font color='#00FF00' size='28'>[1]</font><font color='#33DDFF' size='24'>)</font>	h55277646gfb36g4a29gb7c3g97f00e45653b
 LLDUMMY_StatusText_BonusMagicArmorRemoved	<font color='#33DDFF' size='24'>Bonus Magic Armor Removed</font>	hd69b7366g2d7dg40f8ga7a0gbb227b6cb00e
 LLDUMMY_TrainingDummy_OnDamageTaken	Training Dummy took [1] damage!	hfdb07e3dged89g4481gb37eg32501348b99b
-LLDUMMY_CombatLog_TookDamage	[1]: [2] from [3] ([4])	h098a5013gc693g4743g8206gc4a659f7a145
+LLDUMMY_CombatLog_TookDamage	[[1]] [2] from [3] ([4])	h098a5013gc693g4743g8206gc4a659f7a145
