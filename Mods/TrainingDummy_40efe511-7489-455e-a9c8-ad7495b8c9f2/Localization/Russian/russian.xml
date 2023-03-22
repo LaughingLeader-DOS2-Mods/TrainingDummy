@@ -3,6 +3,7 @@
 	<content contentuid="h0907f3f4ga5edg4151gb820gb568bfb79aa6">*Take your leave.*</content>
 	<content contentuid="h098a5013gc693g4743g8206gc4a659f7a145">[[1]] [2] from [3] ([4])</content>
 	<content contentuid="h0f00ebcag482eg4b4agb20dg046e15d9e83d">*The dummy idles by.*</content>
+	<content contentuid="h1b582e19g1eb8g4b4cgafeag78e96397574e">Adds a skill to summon training dummies - Indestructible targets you can use to test skills and attacks on.</content>
 	<content contentuid="h1caa34b3gc1f8g4685g94ffg6622cb758fd7">Double Dummy</content>
 	<content contentuid="h1ec91211g59a0g42d0gbc6fgbf1d8b70cc0b">*Mark the dummy as a hostile.*</content>
 	<content contentuid="h2529020dg5e78g4396gaaf8g66cd55b802d8">*Grant the dummy bonus Physical Armor.*</content>
@@ -43,6 +44,7 @@
 	<content contentuid="hcf1319f6gf64cg4ff9g9179g52888dc5782f">&lt;font color=&apos;#DD4444&apos;&gt;Deploy Training Dummy&lt;/font&gt;</content>
 	<content contentuid="hd69b7366g2d7dg40f8ga7a0gbb227b6cb00e">&lt;font color=&apos;#33DDFF&apos; size=&apos;24&apos;&gt;Bonus Magic Armor Removed&lt;/font&gt;</content>
 	<content contentuid="hdc388540g03c3g4d91gb102g3a71f9beb26b">Why?!</content>
+	<content contentuid="he0c8490bg6bebg4d9bg8500g67dcadd3faf6">Training Dummy</content>
 	<content contentuid="he169a4a2g0a17g4b1fga268g864e211b0087">*Clear all bonus Magic Armor from the dummy.*</content>
 	<content contentuid="he6354e6agfe73g45c3g861bg63cd4dbbfbd0">[DESTROY] *Destroy the dummy. While it may escape this mortal plane of existence forever, its service will not be forgotten. This dummy will die a hero&apos;s death.*</content>
 	<content contentuid="he7e082e4g1be9g4d52ga3deg98194ecc48da">*Mark the dummy as a neutral.*</content>
