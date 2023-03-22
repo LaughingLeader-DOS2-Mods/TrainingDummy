@@ -1,4 +1,4 @@
-Ext.Require("BootstrapShared.lua")
+Ext.Require("Shared.lua")
 
 local ts = Classes.TranslatedString
 
@@ -10,9 +10,9 @@ local text = {
 ---@alias LLDummyDamageEntryData {Amount:integer, Hits:integer}
 ---@alias LLDummyDamageHitSourceData {Damages:table<DamageType, LLDummyDamageEntryData>, CriticalHit:boolean}
 ---@alias LLDummyAttackerData {Name:string, Damage:table<string,LLDummyDamageHitSourceData>}
----@alias LLDummyDamageData {Name:string, Attackers:table<UUID, LLDummyAttackerData>}
+---@alias LLDummyDamageData {Name:string, Attackers:table<Guid, LLDummyAttackerData>}
 
----@type table<UUID, LLDummyDamageData>
+---@type table<Guid, LLDummyDamageData>
 local aggregatedDamage = {}
 
 local function AddDamageToLog()
@@ -38,25 +38,20 @@ local function AddDamageToLog()
 			table.sort(allDamageText)
 			local finalDamageText = StringHelpers.Join("<br>", allDamageText)
 			CombatLog.AddTextToAllPlayers("Combat", 
-			text.CombatLogDamageReport:ReplacePlaceholders(name, attackerName, sourcesText, finalDamageText, Ext.MonotonicTime()))
+			text.CombatLogDamageReport:ReplacePlaceholders(name, attackerName, sourcesText, finalDamageText, Ext.Utils.MonotonicTime()))
 		end
 	end
 	aggregatedDamage = {}
 end
 
---- Every type of damage deals pure damage now, so armor is unaffected. Damage is reduced by armor.
----@param target EsvCharacter
----@param attacker StatCharacter|StatItem
----@param hit HitRequest
----@param causeType string
----@param impactDirection number[]
----@param context HitContext
----@return HitRequest
-Ext.RegisterListener("BeforeCharacterApplyDamage", function(target, attacker, hit, causeType, impactDirection, context)
-    if target:HasTag("LLDUMMY_TrainingDummy") then
+Ext.Events.BeforeCharacterApplyDamage:Subscribe(function(e)
+	if not e.Target then
+		return
+	end
+    if e.Target:HasTag("LLDUMMY_TrainingDummy") then
 
-		local damageList = Ext.NewDamageList()
-		for k,v in pairs(hit.DamageList:ToTable()) do
+		local damageList = Ext.Stats.NewDamageList()
+		for k,v in pairs(e.Hit.DamageList:ToTable()) do
 			if v.Amount > 0 then
 				damageList:Add(v.DamageType, v.Amount)
 			end
@@ -64,37 +59,41 @@ Ext.RegisterListener("BeforeCharacterApplyDamage", function(target, attacker, hi
 
 		local hitSource = ""
 		
-		if context.HitStatus then
-			if not StringHelpers.IsNullOrEmpty(context.HitStatus.SkillId) then
-				local skillId = GetSkillEntryName(context.HitStatus.SkillId)
-				local skill = Ext.GetStat(skillId)
-				hitSource = string.format("Skill: <font color='%s' size='16'>%s</font>", Data.Colors.Ability[skill.Ability], GameHelpers.GetStringKeyText(skill.DisplayName, skill.DisplayNameRef))
+		if e.Context.Status then
+			if not StringHelpers.IsNullOrEmpty(e.Context.Status.SkillId) then
+				local skillId = GetSkillEntryName(e.Context.Status.SkillId)
+				local skill = Ext.Stats.Get(skillId, nil, false)
+				if skill then
+					hitSource = string.format("Skill: <font color='%s' size='16'>%s</font>", Data.Colors.Ability[skill.Ability], GameHelpers.GetStringKeyText(skill.DisplayName, skill.DisplayNameRef))
+				end
 			else
 				--local hitReason = GameHelpers.Hit.GetHitReason(context.HitStatus.HitReason)
-				hitSource = string.format("Source: <font color='#FFAA33'>%s</font>", context.HitStatus.DamageSourceType)
+				hitSource = string.format("Source: <font color='#FFAA33'>%s</font>", e.Context.Status.DamageSourceType)
 			end
 		end
 
+		local attacker = nil
 		local attackerId = "Unknown"
 
-		if attacker then
-			attackerId = attacker.MyGuid
+		if e.Attacker and e.Attacker.Character then
+			attacker = e.Attacker.Character
+			attackerId = GameHelpers.GetUUID(attacker) --[[@as Guid]]
 		end
 
-		if aggregatedDamage[target.MyGuid] == nil then
-			aggregatedDamage[target.MyGuid] = {
-				Name = string.format("%s (%s)", GameHelpers.GetDisplayName(target), target.NetID),
+		if aggregatedDamage[e.Target.MyGuid] == nil then
+			aggregatedDamage[e.Target.MyGuid] = {
+				Name = string.format("%s (%s)", GameHelpers.GetDisplayName(e.Target), e.Target.NetID),
 				Attackers = {}
 			}
 		end
 
-		if aggregatedDamage[target.MyGuid].Attackers[attackerId] == nil then
-			aggregatedDamage[target.MyGuid].Attackers[attackerId] = {
+		if aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] == nil then
+			aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] = {
 				Damage = {}
 			}
 		end
 
-		local attackerData = aggregatedDamage[target.MyGuid].Attackers[attackerId]
+		local attackerData = aggregatedDamage[e.Target.MyGuid].Attackers[attackerId]
 		if attackerData.Damage[hitSource] == nil then
 			attackerData.Damage[hitSource] = {
 				Damages = {},
@@ -103,12 +102,12 @@ Ext.RegisterListener("BeforeCharacterApplyDamage", function(target, attacker, hi
 		end
 		local damageData = attackerData.Damage[hitSource].Damages
 
-		if hit.CriticalHit then
+		if e.Hit.CriticalHit then
 			attackerData.Damage[hitSource].CriticalHit = true
 		end
 
 		if attacker then
-			attackerData.Name = string.format("%s (%s)", GameHelpers.GetDisplayName(attacker.Character), attacker.NetID)
+			attackerData.Name = string.format("%s (%s)", GameHelpers.GetDisplayName(attacker), attacker.NetID)
 		else
 			attackerData.Name = "Unknown"
 		end
@@ -129,7 +128,7 @@ Ext.RegisterListener("BeforeCharacterApplyDamage", function(target, attacker, hi
 	end
 end)
 
-Ext.RegisterOsirisListener("RequestPickpocket", 2, "after", function (player, target)
+Ext.Osiris.RegisterListener("RequestPickpocket", 2, "after", function (player, target)
 	if IsTagged(target, "LLDUMMY_TrainingDummy") == 1 then
 		StartPickpocket(player,target,1)
 	end
