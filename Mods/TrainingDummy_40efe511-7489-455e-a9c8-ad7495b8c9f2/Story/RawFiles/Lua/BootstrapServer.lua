@@ -16,9 +16,9 @@ local text = {
 local aggregatedDamage = {}
 
 local function AddDamageToLog()
-	for GUID,data in pairs(aggregatedDamage) do
-		local name = data.Name
-		for attackerGUID,data in pairs(data.Attackers) do
+	for GUID,damageData in pairs(aggregatedDamage) do
+		local name = damageData.Name
+		for attackerGUID,data in pairs(damageData.Attackers) do
 			local attackerName = data.Name
 			local sourcesText = ""
 			local allDamageText = {}
@@ -45,87 +45,74 @@ local function AddDamageToLog()
 end
 
 Ext.Events.BeforeCharacterApplyDamage:Subscribe(function(e)
-	if not e.Target then
+	if not e.Target or not e.Target:HasTag("LLDUMMY_TrainingDummy") then
 		return
 	end
-    if e.Target:HasTag("LLDUMMY_TrainingDummy") then
 
-		local damageList = Ext.Stats.NewDamageList()
-		for k,v in pairs(e.Hit.DamageList:ToTable()) do
-			if v.Amount > 0 then
-				damageList:Add(v.DamageType, v.Amount)
+	local hitSource = ""
+	
+	if e.Context.Status then
+		if not StringHelpers.IsNullOrEmpty(e.Context.Status.SkillId) then
+			local skillId = GetSkillEntryName(e.Context.Status.SkillId)
+			local skill = Ext.Stats.Get(skillId, nil, false)
+			if skill then
+				hitSource = string.format("Skill: <font color='%s' size='16'>%s</font>", Data.Colors.Ability[skill.Ability], GameHelpers.GetStringKeyText(skill.DisplayName, skill.DisplayNameRef))
 			end
-		end
-
-		local hitSource = ""
-		
-		if e.Context.Status then
-			if not StringHelpers.IsNullOrEmpty(e.Context.Status.SkillId) then
-				local skillId = GetSkillEntryName(e.Context.Status.SkillId)
-				local skill = Ext.Stats.Get(skillId, nil, false)
-				if skill then
-					hitSource = string.format("Skill: <font color='%s' size='16'>%s</font>", Data.Colors.Ability[skill.Ability], GameHelpers.GetStringKeyText(skill.DisplayName, skill.DisplayNameRef))
-				end
-			else
-				--local hitReason = GameHelpers.Hit.GetHitReason(context.HitStatus.HitReason)
-				hitSource = string.format("Source: <font color='#FFAA33'>%s</font>", e.Context.Status.DamageSourceType)
-			end
-		end
-
-		local attacker = nil
-		local attackerId = "Unknown"
-
-		if e.Attacker and e.Attacker.Character then
-			attacker = e.Attacker.Character
-			attackerId = GameHelpers.GetUUID(attacker) --[[@as Guid]]
-		end
-
-		if aggregatedDamage[e.Target.MyGuid] == nil then
-			aggregatedDamage[e.Target.MyGuid] = {
-				Name = string.format("%s (%s)", GameHelpers.GetDisplayName(e.Target), e.Target.NetID),
-				Attackers = {}
-			}
-		end
-
-		if aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] == nil then
-			aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] = {
-				Damage = {}
-			}
-		end
-
-		local attackerData = aggregatedDamage[e.Target.MyGuid].Attackers[attackerId]
-		if attackerData.Damage[hitSource] == nil then
-			attackerData.Damage[hitSource] = {
-				Damages = {},
-				CriticalHit = false
-			}
-		end
-		local damageData = attackerData.Damage[hitSource].Damages
-
-		if e.Hit.CriticalHit then
-			attackerData.Damage[hitSource].CriticalHit = true
-		end
-
-		if attacker then
-			attackerData.Name = string.format("%s (%s)", GameHelpers.GetDisplayName(attacker), attacker.NetID)
 		else
-			attackerData.Name = "Unknown"
+			--local hitReason = GameHelpers.Hit.GetHitReason(context.HitStatus.HitReason)
+			hitSource = string.format("Source: <font color='#FFAA33'>%s</font>", e.Context.Status.DamageSourceType)
 		end
-		
-		--damageList:AggregateSameTypeDamages()
-		for k,v in pairs(damageList:ToTable()) do
-			if damageData[v.DamageType] == nil then
-				damageData[v.DamageType] = {Amount = 0, Hits = 0}
-			end
-			damageData[v.DamageType].Amount = damageData[v.DamageType].Amount + v.Amount
-			damageData[v.DamageType].Hits = damageData[v.DamageType].Hits + 1
-			--local damageText = GameHelpers.GetDamageText(v.DamageType, v.Amount)
-			--damageData.Sources[#damageData.Sources+1] = hitSource
-			--CombatLog.AddTextToAllPlayers("Combat", text.CombatLogDamage:ReplacePlaceholders(target.DisplayName, damageText, displayName, hitSource))
-		end
-		Timer.Cancel("LLDUMMY_AddInfoToCombatLog")
-		Timer.StartOneshot("LLDUMMY_AddInfoToCombatLog", 2000, AddDamageToLog)
 	end
+
+	local attacker = nil
+	local attackerId = "Unknown"
+
+	if e.Attacker and e.Attacker.Character then
+		attacker = e.Attacker.Character
+		attackerId = GameHelpers.GetUUID(attacker) --[[@as Guid]]
+	end
+
+	if aggregatedDamage[e.Target.MyGuid] == nil then
+		aggregatedDamage[e.Target.MyGuid] = {
+			Name = string.format("%s (%s)", GameHelpers.GetDisplayName(e.Target), e.Target.NetID),
+			Attackers = {}
+		}
+	end
+
+	if aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] == nil then
+		aggregatedDamage[e.Target.MyGuid].Attackers[attackerId] = {
+			Damage = {}
+		}
+	end
+
+	local attackerData = aggregatedDamage[e.Target.MyGuid].Attackers[attackerId]
+	if attackerData.Damage[hitSource] == nil then
+		attackerData.Damage[hitSource] = {
+			Damages = {},
+			CriticalHit = false
+		}
+	end
+	local damageData = attackerData.Damage[hitSource].Damages
+
+	if e.Hit.CriticalHit then
+		attackerData.Damage[hitSource].CriticalHit = true
+	end
+
+	if attacker then
+		attackerData.Name = string.format("%s (%s)", GameHelpers.GetDisplayName(attacker), attacker.NetID)
+	else
+		attackerData.Name = "Unknown"
+	end
+	
+	for k,v in pairs(e.Hit.DamageList:ToTable()) do
+		if damageData[v.DamageType] == nil then
+			damageData[v.DamageType] = {Amount = 0, Hits = 0}
+		end
+		damageData[v.DamageType].Amount = damageData[v.DamageType].Amount + v.Amount
+		damageData[v.DamageType].Hits = damageData[v.DamageType].Hits + 1
+	end
+	Timer.Cancel("LLDUMMY_AddInfoToCombatLog")
+	Timer.StartOneshot("LLDUMMY_AddInfoToCombatLog", 2000, AddDamageToLog)
 end)
 
 Ext.Osiris.RegisterListener("RequestPickpocket", 2, "after", function (player, target)

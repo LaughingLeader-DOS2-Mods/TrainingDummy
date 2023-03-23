@@ -11,42 +11,10 @@ AND
 IsGameLevel(_Region, _IsGameLevel)
 AND
 IntegerMax(_IsEditorMode, _IsGameLevel, 1)
-AND
-DB_Origins(_Char)
-AND
-CharacterIsDead(_Char, 0)
 THEN
-CharacterAddSkill(_Char, "Target_LLDUMMY_TrainingDummy", 0);
-
-IF
-GameStarted(_Region, _IsEditorMode)
-AND
-IsGameLevel(_Region, _IsGameLevel)
-AND
-IntegerMax(_IsEditorMode, _IsGameLevel, 1)
-THEN
-IterateParties("LLDUMMY_Commands_AddSkill");
+IterateParties("LLDUMMY_Iterator_AddSkill");
 TimerCancel("Timers_LLDUMMY_StopInitializationGoal");
-TimerLaunch("Timers_LLDUMMY_StopInitializationGoal", 3000);
-
-IF
-StoryEvent((CHARACTERGUID)_Player, "LLDUMMY_Commands_AddSkill")
-AND
-CharacterIsSummon(_Player, 0)
-AND
-CharacterIsPartyFollower(_Player, 0)
-THEN
-CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 0);
-
-//Remove the training dummy skill from the active bar so players have to arrange it themselves
-/* [OSITOOLS_ONLY]
-IF
-SkillAdded(_Player, "Target_LLDUMMY_TrainingDummy", _)
-AND
-NRD_SkillBarFindSkill(_Player, "Target_LLDUMMY_TrainingDummy", _Slot)
-THEN
-NRD_SkillBarClear(_Player, _Slot);
-*/
+TimerLaunch("Timers_LLDUMMY_StopInitializationGoal", 10000);
 
 IF
 TimerFinished("Timers_LLDUMMY_StopInitializationGoal")

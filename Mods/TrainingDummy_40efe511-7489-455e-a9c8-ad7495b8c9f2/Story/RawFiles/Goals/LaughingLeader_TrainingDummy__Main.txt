@@ -278,13 +278,56 @@ IF
 ObjectFlagSet("LLDUMMY_Commands_AddSkill", (CHARACTERGUID)_Player, _)
 THEN
 ObjectClearFlag(_Player, "LLDUMMY_Commands_AddSkill", 0);
-CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 1);
+CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 0);
 
 IF
 ObjectFlagSet("LLDUMMY_Commands_RemoveSkill", (CHARACTERGUID)_Player, _)
 THEN
 ObjectClearFlag(_Player, "LLDUMMY_Commands_RemoveSkill", 0);
 CharacterRemoveSkill(_Player, "Target_LLDUMMY_TrainingDummy");
+
+//Add the skill to characters that join, such as henchmen
+IF
+CharacterJoinedParty(_Character)
+AND
+DB_IsPlayer(_Character)
+AND
+CharacterHasSkill(_Character, "Target_LLDUMMY_TrainingDummy", 0)
+THEN
+/* [OSITOOLS_ONLY]
+ObjectSetFlag(_Character, "LLDUMMY_ClearSkillFromSkillbar", 0);
+*/
+CharacterAddSkill(_Character, "Target_LLDUMMY_TrainingDummy", 0);
+
+IF
+StoryEvent((CHARACTERGUID)_Player, "LLDUMMY_Iterator_AddSkill")
+AND
+CharacterIsSummon(_Player, 0)
+AND
+CharacterIsPartyFollower(_Player, 0)
+THEN
+/* [OSITOOLS_ONLY]
+ObjectSetFlag(_Player, "LLDUMMY_ClearSkillFromSkillbar", 0);
+*/
+CharacterAddSkill(_Player, "Target_LLDUMMY_TrainingDummy", 0);
+
+/* [OSITOOLS_ONLY]
+IF
+SkillAdded(_Player, "Target_LLDUMMY_TrainingDummy", _)
+AND
+ObjectGetFlag(_Player, "LLDUMMY_ClearSkillFromSkillbar", 1)
+AND
+CharacterIsPlayer(_Player, 1)
+AND
+NRD_SkillBarFindSkill(_Player, "Target_LLDUMMY_TrainingDummy", _Slot)
+THEN
+NRD_SkillBarClear(_Player, _Slot);
+
+IF
+SkillAdded(_Player, "Target_LLDUMMY_TrainingDummy", _)
+THEN
+ObjectClearFlag(_Player, "LLDUMMY_ClearSkillFromSkillbar", 0);
+*/
 //END_REGION
 
 //REGION DAMAGE_TAKEN
